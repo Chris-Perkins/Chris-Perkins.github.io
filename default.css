@@ -15,12 +15,12 @@ h2 {
 }
 
 hr {
-    display: block;
-    height: 5px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+    	display: block;
+    	height: 5px;
+    	border: 0;
+    	border-top: 1px solid #ccc;
+    	margin: 1em 0;
+	padding: 0;
 }
 
 #homeWrapper {	
@@ -34,13 +34,14 @@ hr {
 	margin: 0 auto;
 	background-color: #fcfcfc;
 	width: 720;
+	padding-top: 1px;
 }
 
 #about p {
 	text-align: center;
 	padding-left: 8px;
 	padding-right: 8px;
-	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 a {
