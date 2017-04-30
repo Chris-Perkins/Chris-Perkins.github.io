@@ -1,0 +1,116 @@
+html, body {
+	margin: 0px;
+  	width: 100%;
+}
+
+body {
+  	font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  	font-size: 16pt;
+  	color: #455565;
+}
+
+h2 {
+  	font-size: 20pt;
+  	font-weight: bold;
+}
+
+hr {
+    display: block;
+    height: 5px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+#homeWrapper {	
+    	position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	transform: translateX(-50%) translateY(-75%);
+}
+
+#about {
+	margin: 0 auto;
+	background-color: #fcfcfc;
+	width: 720;
+}
+
+#about p {
+	text-align: center;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 8px;
+}
+
+a {
+  	color: #3271A7;
+}
+
+a:hover {
+  	color: #888;
+}
+
+#connect {
+  	text-align: center;
+	padding-bottom: 8px;
+}
+
+#connect ul {
+  	padding: 0px;
+}
+
+#connect li {
+  	display: inline;
+  	padding-right: 50pt;
+}
+
+#connect li:last-child {
+  	padding-right: 0;
+}
+
+#connect a {
+  	text-decoration: none;
+}
+
+#connect a:hover {
+  	text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+  	.mobile {
+    		display: none;
+  	}
+}
+
+@media only screen and (max-width: 767px) {
+  	#body {
+    		width: calc(100% - 40px);
+    		padding: 0px 20px;
+    		text-align: center;
+    		font-size: 16pt;
+  	}
+  	#homeWrapper {
+    		width: 100%;
+  	}
+  	h1 {
+    		width: 100%;
+    		text-align: center;
+    		margin: 35px 0 16px;
+  	}
+  	.desktop {
+    		display: none !important;
+  	}
+  	#connect li {
+    		font-size: 20pt;
+    		display: block;
+    		padding: 10pt 0;
+  	}
+  	#quote {
+    		text-align: left;
+    		font-size: 14pt;
+  	}
+  	#post {
+    		text-align: left;
+  	}
+}
