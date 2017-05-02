@@ -7,6 +7,7 @@ html, body {
 body {
   	font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   	font-size: 120%;
+	line-height: 125%;
   	color: #455565;
 	display: flex;
     	align-items: center;
@@ -15,14 +16,13 @@ body {
 
 hr {
     	display: block;
-    	height: 5px;
     	border: 0;
     	border-top: 1px solid #ccc;
     	margin: 1em 0;
 	padding: 0;
 }
 
-#homeWrapper {
+#bodyWindow {
 	background-color: #f9f9f9;
 }
 
@@ -52,7 +52,8 @@ a:hover {
 }
 
 #connect ul {
-  	padding: 0px;
+  	padding-left: 8px;
+	padding-right: 8px;
 }
 
 #connect li {
