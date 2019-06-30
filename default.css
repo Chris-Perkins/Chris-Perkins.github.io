@@ -1,5 +1,4 @@
-html, body
-{
+html, body {
 	margin: 0;
 	padding: 0;
   	width: 100%;
@@ -7,22 +6,33 @@ html, body
 	background-color: #f9f9f9
 }
 
-body
-{
+body {
   	font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  	font-size: 120%;
+  	font-size: 3.5vh;
 	line-height: 125%;
   	color: #455565;
 	display: flex;
 }
 
-hr
-{
-	display: block;
+hr {
 	border: 0;
 	border-top: 1px solid #ccc;
-	margin: 1em 0;
+	display: block;
+	margin: auto;
 	padding: 0;
+}
+
+a {
+	color: #3271A7;
+}
+
+pre {
+	font-family: Courier, 'Courier New', monospace
+}
+
+a:hover
+{
+	color: #888;
 }
 
 /* Most of outter, middle, and bodyWindow CSS is for vertical centering" */
@@ -38,50 +48,40 @@ hr
     vertical-align: middle;
 }
 
-#bodyWindow
-{
-    margin-left: auto;
-    margin-right: auto; 
+#bodyWindow {
+	margin: auto;
+	align-content: center;
 
 	background-color: #f9f9f9;
 	max-width: 750px;
 }
 
-#olCustom
-{
+#olCustom {
 	padding-left: 10%;
 	padding-right: 10%;
 }
 
-#olCustom p
-{
-	margin-top: 0px;
-	margin-bottom: 0px;
+#olCustom p {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
-#main
-{
-	width: 100%;
-	padding-top: 1px;
+#main {
+	margin: auto;
+	width: 85%;
 }
 
-#main p
-{
+#main p {
 	text-align: center;
-	padding-bottom: 8px;
 
 	padding-left: 16px;
 	padding-right: 16px;
 }
 
-a
+#myPic 
 {
-  	color: #3271A7;
-}
-
-a:hover
-{
-  	color: #888;
+	align-content: center;
+	width: 100%;
 }
 
 #connect
