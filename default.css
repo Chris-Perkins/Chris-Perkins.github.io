@@ -1,6 +1,7 @@
 html, body
 {
-	margin: 0px;
+	margin: 0;
+	padding: 0;
   	width: 100%;
 	/*background-color: #eaeaea;*/
 	background-color: #f9f9f9
@@ -60,7 +61,7 @@ hr
 
 #main
 {
-	margin: 0 auto;
+	width: 100%;
 	padding-top: 1px;
 }
 
