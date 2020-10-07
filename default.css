@@ -66,6 +66,12 @@ pre {
 {
   	text-align: center;
 	line-height: 200%;
+	width: 100%;
+}
+
+#connect ul
+{
+	padding: 0;
 }
 
 #connect li
