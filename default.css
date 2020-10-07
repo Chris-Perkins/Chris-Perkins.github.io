@@ -24,18 +24,20 @@ hr {
 
 a {
 	color: #3271A7;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #888;
+  	text-decoration: underline;
 }
 
 pre {
 	font-family: Courier, 'Courier New', monospace
 }
 
-a:hover
-{
-	color: #888;
-}
-
-/* Most of outter, middle, and bodyWindow CSS is for vertical centering" */
+/* Most of outer, middle, and bodyWindow CSS is for vertical centering" */
 #outer {
     display: table;
     position: absolute;
@@ -50,38 +52,14 @@ a:hover
 
 #bodyWindow {
 	margin: auto;
+	text-align: center;
 	align-content: center;
 
 	background-color: #f9f9f9;
 	max-width: 750px;
-}
-
-#olCustom {
-	padding-left: 10%;
-	padding-right: 10%;
-}
-
-#olCustom p {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-#main {
-	margin: auto;
-	width: 85%;
-}
-
-#main p {
-	text-align: center;
-
+	width: 90%;
 	padding-left: 16px;
 	padding-right: 16px;
-}
-
-#myPic 
-{
-	align-content: center;
-	width: 100%;
 }
 
 #connect
@@ -90,29 +68,9 @@ a:hover
 	line-height: 200%;
 }
 
-#connect ul
-{
-	padding-left: 16px;
-	padding-right: 16px;
-}
-
 #connect li
 {
   	display: inline;
-  	padding-right: 50pt;
-}
-
-#connect li:last-child
-{
-  	padding-right: 0;
-}
-
-#connect a
-{
-  	text-decoration: none;
-}
-
-#connect a:hover
-{
-  	text-decoration: underline;
+	padding-left: 16px;
+	padding-right: 16px;
 }
