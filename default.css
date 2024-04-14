@@ -66,8 +66,8 @@ pre {
 	background-color: #000000;
 	border-radius: 25px;
 	display: block;
-	font-size: clamp(1px, 0.2vmin, 4px);
-	line-height: clamp(1.2px, 0.2 * 1.2vmin, 5px);
+	font-size: clamp(2px, 0.5vmin, 8px);
+	line-height: clamp(2.4px, 0.5 * 1.2vmin, 10px);
 	font-weight: bold;
 	margin: auto;
 	padding: 10px 10px;
