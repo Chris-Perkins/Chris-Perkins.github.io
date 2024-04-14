@@ -8,7 +8,7 @@ html, body {
 
 body {
   	font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  	font-size: 3.5vh;
+  	font-size: min(3.5vmax, 36px);
 	line-height: 125%;
   	color: #455565;
 	display: flex;
@@ -60,6 +60,18 @@ pre {
 	width: 90%;
 	padding-left: 16px;
 	padding-right: 16px;
+}
+
+#myPic {
+	background-color: #000000;
+	border-radius: 25px;
+	display: block;
+	font-size: clamp(1px, 0.2vmin, 4px);
+	line-height: clamp(1.2px, 0.2 * 1.2vmin, 5px);
+	font-weight: bold;
+	margin: auto;
+	padding: 10px 10px;
+	width: fit-content;
 }
 
 #connect
