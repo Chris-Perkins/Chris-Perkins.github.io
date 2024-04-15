@@ -1,8 +1,13 @@
+@font-face {
+	/* Include font to standardize ascii art across devices*/
+    font-family: "Courier Prime Bold";
+    src: local("fonts/CourierPrime-Bold.ttf") format("truetype");
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
   	width: 100%;
-	/*background-color: #eaeaea;*/
 	background-color: #f9f9f9
 }
 
@@ -33,10 +38,6 @@ a:hover
   	text-decoration: underline;
 }
 
-pre {
-	font-family: Courier, 'Courier New', monospace
-}
-
 /* Most of outer, middle, and bodyWindow CSS is for vertical centering" */
 #outer {
     display: table;
@@ -58,17 +59,19 @@ pre {
 	background-color: #f9f9f9;
 	max-width: 750px;
 	width: 90%;
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 16px;
 }
 
 #myPic {
-	background-color: #000000;
+	/* match font-size and line-height exactly so the ascii art is formatted properly */
+	font-size: clamp(2px, 0.5vmin, 4px);
+	line-height: clamp(2px, 0.5vmin, 4px);
+
+	background-color: #0e1111;
 	border-radius: 25px;
 	display: block;
-	font-size: clamp(2px, 0.5vmin, 8px);
-	line-height: clamp(2.4px, 0.5 * 1.2vmin, 10px);
-	font-weight: bold;
+	font-family: 'Courier Prime';
+	text-align: left;
 	margin: auto;
 	padding: 10px 10px;
 	width: fit-content;
