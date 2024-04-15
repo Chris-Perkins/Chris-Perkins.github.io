@@ -82,6 +82,7 @@ a:hover
   	text-align: center;
 	line-height: 200%;
 	width: 100%;
+	font-size: min(3.0vmax, 36px);
 }
 
 #connect ul
