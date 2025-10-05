@@ -27,6 +27,10 @@ hr {
 	padding: 0;
 }
 
+p {
+	margin: 24px;
+}
+
 a {
 	color: #3271A7;
 	text-decoration: none;
@@ -62,19 +66,32 @@ a:hover
 	padding: 16px;
 }
 
-#myPic {
-	/* match font-size and line-height exactly so the ascii art is formatted properly */
-	font-size: clamp(2px, 0.5vmin, 4px);
-	line-height: clamp(2px, 0.5vmin, 4px);
-
-	background-color: #0e1111;
-	border-radius: 25px;
-	display: block;
-	font-family: 'Courier Prime';
-	text-align: left;
+#pic
+{
 	margin: auto;
-	padding: 10px 10px;
 	width: fit-content;
+
+	/* blackish background or you can't see shit */
+	background-color: #0e1111;
+
+	font-weight: bold;
+	display: block;
+	text-size-adjust: 100%;
+	unicode-bidi: isolate;
+	text-align: left;
+	font-family: 'Consolas';
+}
+
+#pic pre {
+	/* match font-size and line-height exactly so the ascii art is formatted properly */
+	font-size: clamp(1px, 0.5vmin, 3px);
+	line-height: clamp(1px, 0.5vmin, 3px);
+}
+
+#content
+{
+	margin-top: 36px;
+	margin-bottom: 16px;
 }
 
 #connect
@@ -88,6 +105,7 @@ a:hover
 #connect ul
 {
 	padding: 0;
+	margin: 16px;
 }
 
 #connect li
