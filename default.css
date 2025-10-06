@@ -1,7 +1,7 @@
 @font-face {
 	/* Include font to standardize ascii art across devices*/
     font-family: "Courier Prime Bold";
-    src: url("./fonts/CourierPrime-Bold.ttf") format("truetype");
+    src: url(./fonts/CourierPrime-Bold.ttf) format("truetype");
     font-display: block;
 }
 
@@ -90,7 +90,7 @@ a:hover
 	line-height: 1em;
 	word-spacing: 0;
 	letter-spacing: 0;
-	font-family: "Courier Prime Bold", "Courier New", Courier, monospace;
+	font-family: "Courier Prime Bold", monospace;
 	white-space: pre;
 	overflow: visible;
 	text-size-adjust: none;
