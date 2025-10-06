@@ -78,10 +78,6 @@ a:hover
 
 	font-weight: bold;
 	display: block;
-	text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
 	unicode-bidi: isolate;
 	text-align: left;
 }
@@ -89,19 +85,9 @@ a:hover
 #pic pre {
 	font-size: clamp(1px, 0.5vmin, 3px);
 	line-height: 1em;
-	word-spacing: 0;
-	letter-spacing: 0;
 	font-family: "Courier Prime Bold", Courier, "Courier New", monospace;
 	white-space: pre;
 	overflow: visible;
-	text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	margin: 0;
-	padding: 0;
-	transform: scaleY(1);
-	transform-origin: top left;
 }
 
 @media screen and (max-width: 768px) {
