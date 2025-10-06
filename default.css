@@ -71,6 +71,7 @@ a:hover
 {
 	margin: auto;
 	width: fit-content;
+	font-size: clamp(1px, 0.5vmin, 3px);
 
 	/* blackish background or you can't see shit */
 	background-color: #0e1111;
