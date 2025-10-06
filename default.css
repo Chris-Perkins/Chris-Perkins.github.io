@@ -83,7 +83,7 @@ a:hover
 
 #pic pre {
 	font-size: clamp(1px, 0.5vmin, 3px);
-	line-height: 0.5;
+	line-height: 1em;
 	word-spacing: 0;
 	letter-spacing: 0;
 	font-family: "Courier Prime Bold", "Courier New", monospace;
