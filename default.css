@@ -82,9 +82,8 @@ a:hover
 }
 
 #pic pre {
-	/* match font-size and line-height exactly so the ascii art is formatted properly */
 	font-size: clamp(1px, 0.5vmin, 3px);
-	line-height: clamp(1px, 0.5vmin, 3px);
+	line-height: 0.5;
 	word-spacing: 0;
 	letter-spacing: 0;
 	font-family: "Courier Prime Bold", "Courier New", monospace;
