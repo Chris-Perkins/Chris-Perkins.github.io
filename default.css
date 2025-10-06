@@ -13,7 +13,7 @@ html, body {
 
 body {
   	font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  	font-size: min(3.5vmax, 36px);
+  	font-size: clamp(8px, 3.5vmax, 36px);
 	line-height: 125%;
   	color: #455565;
 	display: flex;
@@ -76,7 +76,10 @@ a:hover
 
 	font-weight: bold;
 	display: block;
-	text-size-adjust: 100%;
+	text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
 	unicode-bidi: isolate;
 	text-align: left;
 }
@@ -100,15 +103,15 @@ a:hover
 #connect
 {
   	text-align: center;
-	line-height: 200%;
+	line-height: 2em;
 	width: 100%;
-	font-size: min(3.0vmax, 36px);
+	font-size: clamp(8px, 3.0vmax, 36px);
 }
 
 #connect ul
 {
 	padding: 0;
-	margin: 16px;
+	margin: 0.5em;
 }
 
 #connect li
