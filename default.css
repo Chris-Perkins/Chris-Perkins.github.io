@@ -106,7 +106,7 @@ a:hover
 
 @media screen and (max-width: 768px) {
 	#pic pre {
-		letter-spacing: -0.05em;
+		line-height: 1em;
 	}
 }
 
