@@ -91,7 +91,7 @@ a:hover
 	line-height: 1em;
 	word-spacing: 0;
 	letter-spacing: 0;
-	font-family: "Courier Prime Bold", monospace;
+	font-family: "Courier Prime Bold", Courier, "Courier New", monospace;
 	white-space: pre;
 	overflow: visible;
 	text-size-adjust: none;
@@ -100,6 +100,14 @@ a:hover
 	-ms-text-size-adjust: none;
 	margin: 0;
 	padding: 0;
+	transform: scaleY(1);
+	transform-origin: top left;
+}
+
+@media screen and (max-width: 768px) {
+	#pic pre {
+		letter-spacing: -0.05em;
+	}
 }
 
 #content
