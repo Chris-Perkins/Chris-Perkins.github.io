@@ -92,7 +92,8 @@ a:hover
 
 @media screen and (max-width: 768px) {
 	#pic pre {
-		line-height: 1em;
+		/* iPhone uses box-based height, excluding "descenders" which ARE respected on other devices */
+		line-height: 1.2em;
 	}
 }
 
