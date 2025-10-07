@@ -88,13 +88,17 @@ a:hover
 	font-family: "Courier Prime Bold", Courier, "Courier New", monospace;
 	white-space: pre;
 	overflow: visible;
-
-	/* iPhone uses box-based height, excluding "descenders" which ARE respected on other devices
-	Standardize this to be consistent across devices */
-	ascent-override: 85%;
-    descent-override: 15%;
-    line-gap-override: 0%;
 }
+
+@media screen and (max-width: 768px) {
+	#pic pre {
+		/* iPhone uses box-based height, excluding "descenders" which ARE respected on other devices
+		Standardize this to be consistent across devices.
+		1.2 is just an approximation. */
+		line-height: 1.2em;
+	}
+}
+
 
 
 #content
