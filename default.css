@@ -1,9 +1,13 @@
 @font-face {
 	/* Include font to standardize ascii art across devices*/
-    font-family: "Courier Prime Bold";
-    src: url(./fonts/CourierPrime-Bold.ttf) format("truetype");
-    font-display: block;
+    font-family: "Courier Prime";
+    src: url(./fonts/CourierPrime) format("truetype");
 }
+@font-face {
+    font-family: "Roboto Mono";
+    src: url(./fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf) format("truetype");
+}
+
 
 html, body {
 	margin: 0;
@@ -13,10 +17,11 @@ html, body {
 }
 
 body {
-  	font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  	font-size: clamp(8px, 3.5vmax, 36px);
+  	font-family: "Roboto Mono";
+	font-weight: 200;
+  	font-size: clamp(8px, 3.5vmax, 24px);
 	line-height: 125%;
-  	color: #455565;
+  	color: #272727;
 	display: flex;
 }
 
@@ -39,7 +44,7 @@ a {
 
 a:hover
 {
-	color: #888;
+	background-color: #fffead;
   	text-decoration: underline;
 }
 
@@ -62,8 +67,8 @@ a:hover
 	align-content: center;
 
 	background-color: #f9f9f9;
-	max-width: 750px;
-	width: 90%;
+	max-width: 500px;
+	width: 80%;
 	padding: 16px;
 }
 
@@ -71,7 +76,7 @@ a:hover
 {
 	margin: auto;
 	width: fit-content;
-	font-size: clamp(1px, 0.5vmin, 3px);
+	font-size: clamp(0.5px, 0.5vmin, 1px);
 
 	/* blackish background or you can't see shit */
 	background-color: #0e1111;
@@ -83,9 +88,9 @@ a:hover
 }
 
 #pic pre {
-	font-size: clamp(1px, 0.5vmin, 3px);
+	font-size: clamp(0.5px, 0.5vmin, 2.5px);
 	line-height: 1em;
-	font-family: "Courier Prime Bold", Courier, "Courier New", monospace;
+	font-family: "Courier Prime Bold", monospace;
 	white-space: pre;
 	overflow: visible;
 }
@@ -112,7 +117,7 @@ a:hover
   	text-align: center;
 	line-height: 2em;
 	width: 100%;
-	font-size: clamp(8px, 3.0vmax, 36px);
+	font-size: clamp(8px, 3.0vmax, 24px);
 }
 
 #connect ul
