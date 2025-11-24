@@ -1,27 +1,29 @@
 @font-face {
 	/* Include font to standardize ascii art across devices*/
-    font-family: "Courier Prime";
-    src: url(./fonts/CourierPrime) format("truetype");
+	font-family: "Courier Prime";
+	src: url(./fonts/CourierPrime) format("truetype");
 }
+
 @font-face {
-    font-family: "Roboto Mono";
-    src: url(./fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf) format("truetype");
+	font-family: "Roboto Mono";
+	src: url(./fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf) format("truetype");
 }
 
 
-html, body {
+html,
+body {
 	margin: 0;
 	padding: 0;
-  	width: 100%;
+	width: 100%;
 	background-color: #f9f9f9
 }
 
 body {
-  	font-family: "Roboto Mono";
+	font-family: "Roboto Mono";
 	font-weight: 200;
-  	font-size: clamp(8px, 3.5vmax, 24px);
+	font-size: clamp(8px, 3.5vmax, 24px);
 	line-height: 125%;
-  	color: #272727;
+	color: #272727;
 	display: flex;
 }
 
@@ -42,23 +44,22 @@ a {
 	text-decoration: none;
 }
 
-a:hover
-{
+a:hover {
 	background-color: #fffead;
-  	text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* Most of outer, middle, and bodyWindow CSS is for vertical centering" */
 #outer {
-    display: table;
-    position: absolute;
-    height: 100%;
-    width: 100%;
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
 }
 
 #middle {
-    display: table-cell;
-    vertical-align: middle;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 #bodyWindow {
@@ -72,8 +73,7 @@ a:hover
 	padding: 16px;
 }
 
-#pic
-{
+#pic {
 	margin: auto;
 	width: fit-content;
 	font-size: clamp(0.5px, 0.5vmin, 1px);
@@ -106,29 +106,30 @@ a:hover
 
 
 
-#content
-{
+#content {
 	margin-top: 36px;
 	margin-bottom: 16px;
 }
 
-#connect
-{
-  	text-align: center;
+#bio {
+	margin-top: 24px;
+	margin-bottom: 0px;
+}
+
+#connect {
+	text-align: center;
 	line-height: 2em;
 	width: 100%;
 	font-size: clamp(8px, 3.0vmax, 24px);
 }
 
-#connect ul
-{
+#connect ul {
 	padding: 0;
 	margin: 0.5em;
 }
 
-#connect li
-{
-  	display: inline;
+#connect li {
+	display: inline;
 	padding-left: 16px;
 	padding-right: 16px;
 }
