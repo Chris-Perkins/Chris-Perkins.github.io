@@ -21,7 +21,7 @@ body {
 body {
 	font-family: "Roboto Mono";
 	font-weight: 200;
-	font-size: clamp(8px, 3.5vmax, 24px);
+	font-size: clamp(8px, 3.0vmax, 32px);
 	line-height: 125%;
 	color: #272727;
 	display: flex;
