@@ -324,8 +324,18 @@ SNM-04 implementation contract: at admitted live windup sample a uniform-area si
 
 ## PAN-03 — Forgiving frying-pan hitbox
 
-Queued user request: modestly expand existing pan enemy-hit geometry so visible contact and near-edge hits are forgiving. Preserve automatic swing cadence/damage and unrelated mechanics; treat as a basic existing-geometry adjustment with1member committees. SNM-04remains current; authoritative live stage/queue in work-items/CURRENT-WORK-ITEM.md and WORK-ITEMS.md.
+User request: modestly expand existing pan enemy-hit geometry so visible contact and near-edge hits are forgiving. Preserve automatic swing cadence/damage and unrelated mechanics; treat as a basic existing-geometry adjustment with1member committees. Authoritative live stage/queue in work-items/CURRENT-WORK-ITEM.md and WORK-ITEMS.md.
 
 SNM-04accepted4/5 on 28739fe1466726d24bc79f40aa93a6f4261809a8a39600c8b8e1a7ac5340453e, no blockers; pending fifth cancelled without approval. SNM-04STOP: product frozen handoff complete. PAN-03now current; authoritative stage/checklist in CURRENT-WORK-ITEM.md, queue empty.
 
 PAN-03selected contract: enemy-only outer target-radius allowance increases.5→.75, whole existing reachScale multiplication retained; unscaled all-heading enemy contactSlack1→3. Keep nominal reach37, angle thresholds/halfAngle, pan rendering, chest radius0/obstacle.5, automatic cadence/damage/once-per-target execution and all snowball leading/FIFO behavior unchanged. C01+C03selected1/1; stronger C02omitted. Current stage remains authoritative in CURRENT-WORK-ITEM.md.
+
+PAN-03accepted1/1 on frozen212candidate 5b8167dabfa8d4f116bf51a66b69dd9749b5d89a5899491872035818ecacddc3, no blockers. Enemy radiusallowance.75/contactSlack3 supersede PAN-01original.5/1 enemy tolerances; all other contracts retain their selected meaning. No active work item; queue empty. This completion bookkeeping follows frozen approval and changes no product bytes.
+
+## PAN-04 — Longer, responsive pan hits while approaching
+
+Latest user request extends the pan enemy hitbox further from the penguin and fixes the demonstrated delay when walking towards enemies. Preserve automatic cadence/damage, once-per-target per swing, meaningful rear/outside boundaries and current modifiers; use actual movement/active-pan evidence to determine the cause. Current scope/stage/checklist authoritative in CURRENT-WORK-ITEM.md.
+
+PAN-04demonstrated defect: live enemies entering eligible range after automatic admission are ignored throughout the visible active pan; fast straight walking can pass them between admissions. Include active-swing enemy contact with per-swing deduplication, alongside substantially longer enemy reach. Keep other object processing, damage/cadence, current close-contact union and all unrelated mechanics. Current design/validation stage authoritative in CURRENT-WORK-ITEM.md.
+
+PAN-04 selected C01 (5/5): enemy nominal reach55 (+18), retain authored pan/object reach37 and current radius/contact/angle/golden scale. Run-admitted transient identity Set permits one pan hit per enemy per serial; capture damage at admission, check after resolved player movement and after existing enemy movement while p.swing>0 after full-dt aging. Refresh active swingFacing fields to live facing for art alignment. Clear ownership at expiry, shop departure, settlement/reset; legitimate new admissions replace ownership including frenzy overlap. No added admissions, catch-up/sweep, object contacts, save fields or RNG draws. Existing launch/reward/SNM04/FIFO code preserved; earlier hits intentionally change downstream combat. Authoritative stage remains CURRENT-WORK-ITEM.md.

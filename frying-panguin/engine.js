@@ -13,11 +13,11 @@
   const SWING_SECONDS = (0.32 / 1.5) / 0.67;
   const SWING_COOLDOWN = (0.40 / 1.5) / 0.67;
   // World/logical pixel lengths; halfAngle is radians. Contact radii are unscaled.
-  const PAN_GEOMETRY = Object.freeze({ reach: 37, enemyDot: .1, chestDot: .22, contactSlack: 3, headRadius: 6, frenzyRadius: 8, halfAngle: Math.acos(.1) });
+  const PAN_GEOMETRY = Object.freeze({ reach: 37, enemyReach: 55, enemyDot: .1, chestDot: .22, contactSlack: 3, headRadius: 6, frenzyRadius: 8, halfAngle: Math.acos(.1) });
   function panTargetHit(player, target, kind) {
     const dx = target.x - player.x, dy = target.y - player.y, d = Math.hypot(dx, dy);
     if (kind === 'enemy' && d <= player.radius + target.radius + PAN_GEOMETRY.contactSlack) return true;
-    const reach = (PAN_GEOMETRY.reach + (kind === 'chest' ? 0 : target.radius * (kind === 'enemy' ? .75 : .5))) * player.reachScale;
+    const reach = ((kind === 'enemy' ? PAN_GEOMETRY.enemyReach : PAN_GEOMETRY.reach) + (kind === 'chest' ? 0 : target.radius * (kind === 'enemy' ? .75 : .5))) * player.reachScale;
     const dot = (dx * player.facingX + dy * player.facingY) / (d || 1);
     return d <= reach && (d === 0 && kind !== 'obstacle' || dot >= (kind === 'chest' ? PAN_GEOMETRY.chestDot : PAN_GEOMETRY.enemyDot));
   }
@@ -375,6 +375,7 @@
     prepareShop(reason) {
       this.phase = 'shop'; this.shopGeneration++; this.shopTarget = null;
       this.attackTickets = new Map(); this.attackTicketSerial = 0;
+      this.panStrike = null;
       this.remaining = RUN_SECONDS;
       this.scaleRemaining = ENCOUNTER_RAMP_SECONDS; this.encounterPressure = 0; this.difficulty = 0;
       this.runGold = 0;
@@ -418,6 +419,7 @@
     settleOuting(reason) {
       if (this.settledOuting) return this.settledOuting;
       this.attackTickets.clear();
+      this.panStrike = null;
       // Latch before any storage callback. Arrivals, KOs and time belong to this
       // outing; later canonical reconciliation must never rewrite this record.
       this.settledOuting = this.summary = Object.freeze({ reason, enemiesConquered: this.kills, goldGained: this.runGold, timeSurvived: clamp(RUN_SECONDS - this.remaining, 0, RUN_SECONDS) });
@@ -509,6 +511,7 @@
       this.syncSavedProgress();
       this.syncShopEquipment();
       this.phase = 'run'; this.shopGeneration++; this.shopTarget = null;
+      this.panStrike = null; // A shop swing cannot become a live attack on departure.
       this.remaining = RUN_SECONDS;
       this.scaleRemaining = ENCOUNTER_RAMP_SECONDS; this.encounterPressure = 0; this.difficulty = 0;
       this.events.push({ type: 'depart' });
@@ -1177,6 +1180,19 @@
 
     enemyAwarenessRadius() { return this.player.gadget === 'greedy' && this.coins.some(coin => coin.pulling) ? TOY_DEFS.greedyAwareness : TOY_DEFS.awareness; }
 
+    contactPanEnemies() {
+      const p = this.player, strike = this.panStrike;
+      if (this.phase !== 'run' || !p.alive || p.swing <= 0 || !strike || strike.serial !== p.swingSerial) return;
+      // Active contact follows movement-facing; keep the existing art heading aligned.
+      const finiteFacing = Number.isFinite(p.facingX) && Number.isFinite(p.facingY) && Math.hypot(p.facingX, p.facingY) > 0;
+      p.swingFacingX = finiteFacing ? p.facingX : null; p.swingFacingY = finiteFacing ? p.facingY : null;
+      for (const enemy of this.enemies) {
+        if (enemy.hp <= 0 || strike.hits.has(enemy) || !panTargetHit(p, enemy, 'enemy')) continue;
+        strike.hits.add(enemy); // Own the hit before damage/launch/reward callbacks.
+        this.hitEnemy(enemy, strike.damage, enemy.x - p.x, enemy.y - p.y);
+      }
+    }
+
     swing(stepSeconds = 0) {
       if (this.phase === 'summary' || this.phase === 'winning' || this.phase === 'dying') return false;
       const p = this.player;
@@ -1185,12 +1201,13 @@
       p.swing = timing.duration; p.swingDuration = timing.duration;
       p.cooldown = Math.max(0, timing.cooldown + Math.min(0, p.cooldown));
       p.swingRecovery = p.cooldown; p.swingStepSeconds = stepSeconds;
-      // Presentation-only admission vector; damage continues to use live facing.
+      // Initial art heading; live active contact refreshes it after movement.
       const finiteFacing = Number.isFinite(p.facingX) && Number.isFinite(p.facingY) && Math.hypot(p.facingX, p.facingY) > 0;
       p.swingFacingX = finiteFacing ? p.facingX : null; p.swingFacingY = finiteFacing ? p.facingY : null;
       p.swingSerial = (p.swingSerial || 0) + 1;
       p.swingCadence = timing.cooldown; // Presentation-only cadence captured at strike.
       this.events.push({ type: 'swing' });
+      this.panStrike = this.phase === 'run' ? { serial: p.swingSerial, hits: new Set(), damage: (1 + this.upgrades.pan) * (p.buffs.frenzy > 0 ? POWERUP_DEFS.frenzy.damageScale : 1) } : null;
       if (this.phase !== 'run') return true;
       for (const chest of this.chests) {
         if (chest.open) continue;
@@ -1198,12 +1215,7 @@
         if (!panTargetHit(p, chest, 'chest')) continue;
         this.breakChest(chest);
       }
-      for (const enemy of this.enemies) {
-        if (enemy.hp <= 0) continue;
-        const dx = enemy.x - p.x, dy = enemy.y - p.y, d = Math.hypot(dx, dy);
-        if (!panTargetHit(p, enemy, 'enemy')) continue;
-        this.hitEnemy(enemy, (1 + this.upgrades.pan) * (p.buffs.frenzy > 0 ? POWERUP_DEFS.frenzy.damageScale : 1), dx, dy);
-      }
+      this.contactPanEnemies();
       for (const rock of this.obstacles) {
         if ((rock.kind !== 'rock' && !rock.breakable) || rock.broken) continue;
         const dx = rock.x - p.x, dy = rock.y - p.y, d = Math.hypot(dx, dy);
@@ -1405,6 +1417,7 @@
       const motionDt = Math.min(dt, ENEMY_MOTION_MAX_DT);
       const p = this.player;
       p.swing = Math.max(0, p.swing - dt);
+      if (p.swing === 0) this.panStrike = null;
       p.cooldown = Math.max(this.upgrades.swing > 0 ? -Math.min(dt, .05) : 0, p.cooldown - dt);
       p.invulnerable = Math.max(0, p.invulnerable - dt);
       p.hurtFlash = Math.max(0, p.hurtFlash - dt);
@@ -1427,6 +1440,7 @@
       this.updatePeels(dt, distance(before, p) > .001, motionDt);
       // The pan handles the bonking; keyboard and joypad are only for movement.
       this.swing(dt);
+      this.contactPanEnemies();
       this.updateShopTarget();
       if (freshInteract) { const offer = this.nearbyShop(); if (offer) this.buyUpgrade(offer.id); }
       if (this.phase === 'run') {
@@ -1451,6 +1465,7 @@
         if (this.phase !== 'run') return;
         this.updateEnemies(motionDt);
         if (this.phase !== 'run') return;
+        this.contactPanEnemies();
       }
       this.updateCoins(motionDt);
       const honking = this.player.gadget === 'greedy' && this.coins.some(coin => coin.pulling);

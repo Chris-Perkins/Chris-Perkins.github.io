@@ -3747,7 +3747,7 @@ Collaboration note: keep mutable stage/handoff state in one authoritative field.
 - [x] User explicitly requested basic work item; add-work-item skill read/applied. SNM-04accepted/archived before promotion. Root docs/tracking only; one main implementation subagent will own selected engine/cache/local snapshot changes after exact handoff. Panels read-only.
 - [x] P01closed/read; freshV01approvesC01+C03(1/1), rejectsstrongerC02. Selected enemy radiusallowance.75 andcontactSlack3; preserve nominalreach/art/angles/otherobjects. Root engineSTOP, exact product/cache/local snapshot ownership offered to pan_main; root keeps requirements/tracking/current scratch, main may append/update only its named scratch section.
 - [x] Main ownershipACK→SOURCE-TESTSTOP; exact two-line geometry,183cache references and nine-asset refresh/build. Actual-step newband hit/clearmiss/cadence/damage/modifiers/once-target and normal/RM native near-edge proof pass; full212file candidate frozen, root read handoff/source/harnesses and inspected key screenshots. Main scratch preserved.
-- [ ] Fresh1/1acceptance, archive immediately.
+- [x] Freshpan_r1APPROVE1/1/no blockers on212candidate 5b8167dabfa8d4f116bf51a66b69dd9749b5d89a5899491872035818ecacddc3; report full-read/finalguard clean. Archived immediately, current/requirements/root scratch/private process reconciled; queue empty/no publication. Main scratch preserved.
 - Collaboration note: avoid moving the rendered reach merely to hide collision misses; measure target edge tolerance and keep chest/obstacle contracts explicit.
 
 ## 2026-10-06 — PAN03 pan_main
@@ -3758,3 +3758,11 @@ Collaboration note: keep mutable stage/handoff state in one authoritative field.
 - [x] Existing refresh/build, node syntax and diff whitespace checks pass. Frozen191product manifest plus11generated paths in /tmp/panguin-pan-forgiving/candidate.json; enginee106523c87118fbf9be6909820d2c96404cc8a4905742312870cf7f267fbd9e2. SOURCE-TESTSTOP; root may sync docs and launch fresh basic reviewer.
 - Fixture notes: corrected temporary contact fixtures to actual player radius6 before passing; nonexistent historical #sound selector replaced with runtime mute assertion plus physical Chromium mute. No product changes from these harness corrections. Ordinary runs are2seconds native departure only; expanded-band proof is arranged, not broad playability evidence.
 - Collaboration note: retain the prior baseline and distinguish arranged edge fixtures from ordinary native departure; no tests or harnesses added to product.
+
+## 2026-10-06 — root PAN-04 approach contact
+
+- [x] Read current PAN-03and engine strike/velocity/timing. Root owns source/art/cache/local snapshot/docs/tracking; panels read-only. Preserved baseline /tmp/panguin-pan-approach/baseline.cjs.
+- [x] Actual initial-swing admission fixture: base eligible at.10hit.4167; maxwalk+socks eligible.1333 but passed without hit. Source only checks admission instant. Complex5proposal/5freshselection/5freshacceptance required for bounded active-contact fix; All5proposals/all5freshselectors closed/read; C01selected5/5. Root sole writer.
+- [ ] Implement longer responsive enemy contact with damage/cadence/once-hit/art/modifier/phase preservation; bounded actual-step and muted native proof.
+- [ ] Frozen candidate fresh scope-sized acceptance, archive immediately.
+- Collaboration note: a radial tolerance probe does not validate enemies entering range between strike admissions; trace movement and admission time separately.
