@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#dbeaf0">
+  <meta name="description" content="Pan down! Survival time 02:56.">
+  <title>Frying Panguin · 02:56 · DEFEAT</title>
+  <link rel="icon" href="/frying-panguin/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/frying-panguin/style.css?shr02">
+  <script src="/frying-panguin/engine.js?hrt03" defer></script>
+  <script src="/frying-panguin/art.js?coc01" defer></script>
+  <script src="/frying-panguin/audio.js?coc01" defer></script>
+  <script src="/frying-panguin/share-result.js?20261006share1" defer></script>
+  <script src="/frying-panguin/share-config.js?20261006share1" defer></script>
+  <script src="/frying-panguin/game.js?coc01" defer></script>
+<meta name="referrer" content="no-referrer"><meta property="og:title" content="Frying Panguin · 02:56 · DEFEAT"><meta property="og:type" content="website"><meta property="og:url" content="https://chrisperkins.me/frying-panguin/r/death-176/"><meta property="og:description" content="Pan down! Survival time 02:56."><meta property="og:image" content="https://chrisperkins.me/frying-panguin/images/v2/death-176.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Frying Panguin penguin with pan. DEFEAT, 02:56 survival time."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Frying Panguin · 02:56 · DEFEAT"><meta name="twitter:description" content="Pan down! Survival time 02:56."><meta name="twitter:image" content="https://chrisperkins.me/frying-panguin/images/v2/death-176.png"><meta name="twitter:image:alt" content="Frying Panguin penguin with pan. DEFEAT, 02:56 survival time."></head>
+<body>
+  <main class="game-frame" aria-label="Frying Panguin game">
+    <header class="game-toolbar">
+      <div class="brand" title="Frying Panguin"><img src="/frying-panguin/icon.svg" width="30" height="30" alt="Frying Panguin"><h1 class="sr-only">Frying Panguin</h1><span id="location" class="sr-only">The frost shops</span><svg id="home-icon" class="home-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h2V6h2V4h2V2h2v2h2v2h2v2h2v2h-2v5H9v-4H7v4H3v-5H1z" fill="currentColor"/></svg></div>
+      <div class="vitals"><div id="health" class="health" aria-label="Health 3 of 3"></div><div class="pan-power" title="Pan power"><span id="pan-level"></span></div></div>
+      <div class="timer" aria-label="Time remaining"><svg width="15" height="17" viewBox="0 0 15 17" aria-hidden="true"><path d="M4 1h7M7.5 1v3M12 4l1.5-1.5M3 5h9v2h2v6h-2v2H3v-2H1V7h2zM7.5 7v4h3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span id="timer">03:00</span><span id="timer-state">READY</span></div>
+      <div class="gold" title="Saved gold"><span class="coin-icon" aria-hidden="true"></span><span id="gold">0</span></div>
+
+    </header>
+    <div class="viewport" id="viewport">
+      <canvas id="game" tabindex="0" role="img" aria-label="Overhead arctic adventure. The pan swings automatically. Move with WASD, arrow keys, or the mobile joypad. Approach a physical upgrade display and press Space or tap its label."></canvas>
+      <div class="run-status"><span id="danger" data-stage="-1" role="img" aria-label="Safe in shops"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v2h3v3h2v10h-3v3H5v-3H2V8h2V5h3z" fill="#d8e8e9" stroke="currentColor" stroke-width="1"/><path class="danger-eyes" d="M6 10h4v3H6zm8 0h4v3h-4zM9 16h6v2H9z" fill="currentColor"/><path class="danger-brows" d="M5 8h5v2H5zm9 0h5v2h-5z" fill="currentColor"/></svg><i></i><i></i><i></i></span><span id="buffs"></span></div>
+      <div id="player-buffs" class="player-buffs" role="group" aria-label="Active temporary effects" hidden></div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      <div id="shop-displays" class="shop-displays" aria-label="Physical upgrade displays"></div>
+      <button id="use-supply" class="use-supply" type="button" aria-label="Use packed supply" hidden><img id="supply-icon" width="34" height="34" alt=""><kbd>Q</kbd></button>
+      <div id="joystick" class="joystick" role="group" aria-label="Movement joypad"><div id="joystick-thumb"></div></div>
+      <section id="summary-screen" class="summary-screen" role="dialog" aria-modal="true" aria-labelledby="summary-title" hidden>
+        <div class="summary-card">
+          <h2 id="summary-title">SUMMARY</h2>
+          <div class="summary-celebration" aria-hidden="true"><canvas id="summary-hero" width="112" height="88"></canvas><span class="summary-spark">✦</span><span class="summary-spark">✦</span><span class="summary-spark">+</span></div>
+          <strong id="summary-result" class="summary-result">PAN DOWN!</strong>
+          <div class="summary-stats">
+            <div class="summary-stat"><span class="summary-stat-icon"><img id="summary-enemy-icon" width="40" height="40" alt="Enemies conquered"></span><strong id="summary-enemies">0</strong><small>KOs</small></div>
+            <div class="summary-stat"><span class="summary-stat-icon"><img id="summary-coin-icon" class="summary-coin" width="32" height="32" alt="Gold gained"></span><strong id="summary-gold">0</strong><small>GOLD</small></div>
+            <div class="summary-stat"><span class="summary-stat-icon"><svg viewBox="0 0 15 17" role="img" aria-label="Time survived"><path d="M4 1h7M7.5 1v3M12 4l1.5-1.5M3 5h9v2h2v6h-2v2H3v-2H1V7h2zM7.5 7v4h3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span><strong id="summary-time">00:00</strong><small>TIME</small></div>
+          </div>
+          <div class="summary-actions">
+          <div id="summary-utilities" role="group" aria-label="Share this result">
+            <div class="summary-share-actions"><button id="summary-share" type="button" aria-disabled="true">SHARE</button><button id="summary-copy" type="button" hidden>COPY LINK</button></div>
+            <p id="summary-share-status" role="status" aria-live="polite"></p>
+            <label id="summary-link-label" hidden>Result URL<input id="summary-link" type="text" readonly aria-label="Result URL. Select and copy manually."></label>
+          </div>
+          <button id="summary-continue" type="button" aria-label="Continue to shops. Press a fresh key or tap outside sharing controls."><span aria-hidden="true">↵</span></button>
+          </div>
+          <p class="summary-hint" aria-label="Press a fresh key or tap outside sharing controls to continue. Tab navigates controls.">KEY / TAP OUTSIDE SHARE</p>
+        </div>
+      </section>
+    </div>
+    <footer class="game-footer"><div class="save-status" id="save-status" title="Gold and upgrades saved"><span></span><span class="sr-only">Gold and upgrades saved</span></div></footer>
+    <noscript>Frying Panguin needs JavaScript to play. Please enable it in your browser.</noscript>
+  </main>
+</body>
+</html>

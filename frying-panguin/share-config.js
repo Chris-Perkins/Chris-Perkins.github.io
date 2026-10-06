@@ -1,2 +1,2 @@
-// Literal successful Sites deployment origin; result-only preview, no game publication.
-window.PanguinShareConfig=Object.freeze({origin:"https://frying-panguin-results.chrisfromtemporary50.chatgpt.site"});
+// Public game and finite result pages on the existing custom domain.
+window.PanguinShareConfig=Object.freeze({origin:"https://chrisperkins.me",basePath:"/frying-panguin"});

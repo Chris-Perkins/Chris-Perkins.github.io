@@ -371,7 +371,7 @@
   function syncShareResult(){
     const summary=game.phase==='summary'?game.summary:null;
     if(summary!==shareSummary){shareOperation++;sharePending=false;shareSummary=summary;shareKeyPermit=sharePointerPermit=null;shareURL='';document.getElementById('summary-copy').hidden=true;document.getElementById('summary-link-label').hidden=true;shareStatus('');
-      if(summary&&Object.isFrozen(summary)&&window.PanguinShareConfig?.origin){try{shareURL=shareURLs.get(summary)||window.PanguinResult.resultURL(window.PanguinResult.project(summary),window.PanguinShareConfig.origin);shareURLs.set(summary,shareURL);}catch{shareStatus('Result link unavailable.');}}
+      if(summary&&Object.isFrozen(summary)&&window.PanguinShareConfig?.origin){try{shareURL=shareURLs.get(summary)||window.PanguinResult.resultURL(window.PanguinResult.project(summary),window.PanguinShareConfig.origin,window.PanguinShareConfig.basePath);shareURLs.set(summary,shareURL);}catch{shareStatus('Result link unavailable.');}}
       document.getElementById('summary-link').value=shareURL;
     }
     const disabled=!summary||!summaryReady()||sharePending||!shareURL;

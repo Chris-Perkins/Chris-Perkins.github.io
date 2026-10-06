@@ -10,6 +10,12 @@
   function displaySeconds(value) { const t = tuple(value); return Math.min(Math.floor(t[3] + .001), t[2] === 'death' ? 179 : 180); }
   function describe(value) { const t = tuple(value), seconds = displaySeconds(t), time = String(Math.floor(seconds / 60)).padStart(2, '0') + ':' + String(seconds % 60).padStart(2, '0'), outcome = t[2] === 'timeout' ? 'FULL SURVIVAL' : 'DEFEAT', imageKey = t[2] + '-' + String(seconds).padStart(3, '0') + '.png'; return Object.freeze({ time, seconds, outcome, imageKey, title: 'Frying Panguin · ' + time + ' · ' + outcome, description: t[2] === 'timeout' ? 'Pan of the year! Still waddling.' : 'Pan down! Survival time ' + time + '.', imageAlt: 'Frying Panguin penguin with pan. ' + outcome + ', ' + time + ' survival time.' }); }
   function origin(value) { const u = new URL(value); if (u.protocol !== 'https:' || u.username || u.password || u.origin !== value) throw Error('Invalid result origin'); return value; }
-  function resultURL(value, host) { return origin(host) + '/r/' + encode(value); }
+  function resultURL(value, host, basePath) {
+    const root = origin(host), token = encode(value);
+    if (arguments.length < 3) return root + '/r/' + token;
+    if (basePath !== '/frying-panguin') throw Error('Invalid result base path');
+    const bucket = value[2] + '-' + String(displaySeconds(value)).padStart(3, '0');
+    return root + basePath + '/r/' + bucket + '/?result=' + token;
+  }
   return Object.freeze({ VERSION, DURATION, MAX_TOKEN, encode, decode, project, displaySeconds, describe, origin, resultURL });
 });
