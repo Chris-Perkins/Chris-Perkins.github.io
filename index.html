@@ -27,6 +27,8 @@
       width: 88px;
       height: 88px;
       flex: none;
+      /* Compensate for transparent padding around the visible sprite. */
+      margin-left: -24px;
       margin-right: -4px;
       image-rendering: pixelated;
     }
@@ -188,8 +190,8 @@
     </div>
   </div>
   <!-- uses the shipped renderer without starting a game. -->
-  <script src="/frying-panguin/engine.js?pan06"></script>
-  <script src="/frying-panguin/art.js?coc01"></script>
+  <script src="/frying-panguin/engine.js?pan07"></script>
+  <script src="/frying-panguin/art.js?pan07"></script>
   <script>
     (() => {
       const canvas = document.getElementById('frying-panguin-art');
