@@ -3,6 +3,64 @@
 <head>
   <title>Christopher Perkins</title>
   <link rel="stylesheet" type="text/css" href="default.css">
+  <!-- SITE-01 scoped link presentation -->
+  <style>
+    #frying-panguin-home {
+      margin: 20px 0 0;
+    }
+
+    #frying-panguin-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      color: #275b78;
+      background: #eef4f1;
+      border: 1px solid #b4c9ce;
+      border-radius: 4px;
+      font-size: clamp(14px, 2.5vmax, 20px);
+      line-height: 1.25;
+    }
+
+    #frying-panguin-link:focus-visible {
+      outline: 3px solid #3271a7;
+      outline-offset: 4px;
+    }
+
+    #frying-panguin-link svg {
+      width: 48px;
+      height: 48px;
+      flex: none;
+      overflow: visible;
+    }
+
+    #frying-panguin-link .home-pan {
+      transform-origin: 20px 26px;
+      animation: home-pan-swing 600ms ease-out;
+    }
+
+    @keyframes home-pan-swing {
+      0% {
+        transform: rotate(-55deg);
+      }
+
+      55% {
+        transform: rotate(50deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #frying-panguin-link .home-pan {
+        animation: none;
+        transform: none;
+      }
+    }
+  </style>
+  <!-- /SITE-01 scoped link presentation -->
 </head>
 
 <body>
@@ -146,6 +204,27 @@
               </li>
             </ul>
           </div> <!-- closes connect div -->
+          <!-- SITE-01 game link -->
+          <p id="frying-panguin-home">
+            <a id="frying-panguin-link" href="http://www.chrisperkins.me/frying-panguin">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                shape-rendering="crispEdges">
+                <path fill="#d78c4c" d="M8 32h8v4H8zM20 32h8v4h-8z" />
+                <path fill="#34475b" d="M10 6h14v3h4v5h3v14h-3v5H8v-5H5V14h3V9h2z" />
+                <path fill="#718fa3" d="M11 9h12v3h4v16h-3v3H11v-3H8V14h3z" />
+                <path fill="#fff1d8" d="M12 13h4v3h4v-3h4v5h2v11H10V18h2z" />
+                <path fill="#34475b" d="M12 17h3v3h-3zM21 17h3v3h-3z" />
+                <path fill="#e6a35d" d="M15 21h7v3h-7z" />
+                <g class="home-pan">
+                  <path fill="#34475b" d="M20 25h12v3H20zM33 19h7v2h3v9h-3v2h-7v-2h-3v-9h3z" />
+                  <path fill="#b8d0d8" d="M34 21h5v2h2v5h-2v2h-5v-2h-2v-5h2z" />
+                  <path fill="#ecf4ef" d="M34 22h4v2h-4z" />
+                </g>
+              </svg>
+              <span>Frying Panguin</span>
+            </a>
+          </p>
+          <!-- /SITE-01 game link -->
         </div> <!-- closes content div -->
       </div> <!-- closes about div -->
     </div>

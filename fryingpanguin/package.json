@@ -1,0 +1,9 @@
+{
+  "name": "frying-panguin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An immediately playable, dependency-free pixel art browser game.",
+  "scripts": {
+    "start": "python3 -m http.server 8765 --bind 127.0.0.1"
+  }
+}
