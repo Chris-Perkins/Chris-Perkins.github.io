@@ -12,7 +12,3 @@ Committee policy (latest direct user instruction): very basic fixes use1independ
 
 
 
-
-## SHR-05 — Shared links and custom-domain game path
-
-Hide the visible Shared result / time / External preview strip on shared links. Publish Frying Panguin at https://chrisperkins.me/fryingpanguin and update new result links and homepage destination accordingly, preserving existing homepage and result embeds. Hosting/routing scope classification and bounded implementation plan pending after CLN-01.

@@ -280,4 +280,4 @@ The decorative pan SVG below Hearts/Lives is removed. Health remains clear, and 
 
 ## Live follow-up status — 2026-10-06
 
-Current item: CLN-01 test-file cleanup. SHR-05 shared-link banner removal and custom-domain path is queued. Core gameplay and existing hosting inputs are preserved during cleanup. Tests and harnesses will no longer be part of the project; historical validation records retain their original evidence scope.
+Current item: SHR-05 shared-link banner removal, custom-domain path and actual game art/animation on repository-root homepage. CLN-01 test-file cleanup is DONE with1/1 fresh acceptance. Core gameplay and existing hosting inputs are preserved during cleanup. Tests and harnesses will no longer be part of the project; historical validation records retain their original evidence scope.

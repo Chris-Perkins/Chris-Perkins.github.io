@@ -3677,6 +3677,6 @@ Collaboration note: keep mutable stage/handoff state in one authoritative field.
 ## 2026-10-06 — root sharing origin and test cleanup
 
 - [x] Inspect custom domain: existing chrisperkins.me is GitHub Pages; requested game path currently returns404. Existing Sites checkout opened before any source edits.
-- [x] CLN-01 implementation:79 test files and56 scripts removed; main SOURCE/TEST STOP received. Core9 and all hosting inputs unchanged. Fresh1/1 review pending; preserve core9 and hosting files. Main receives exact test/package ownership; root owns docs/tracking. Private baseline: /tmp/panguin-test-cleanup/preserved-before.json. One fresh review after STOP.
-- [ ] SHR-05: hide shared-link strip and publish requested custom-domain game path after cleanup closes.
+- [x] CLN-01 implementation:79 test files and56 scripts removed; main SOURCE/TEST STOP received. Core9 and all hosting inputs unchanged. Fresh1/1 acceptance passed, no blockers; archived immediately; preserve core9 and hosting files. Main receives exact test/package ownership; root owns docs/tracking. Private baseline: /tmp/panguin-test-cleanup/preserved-before.json. One fresh review after STOP.
+- [ ] SHR-05 now current: hide shared-link strip, publish requested custom-domain game path and use actual game penguin/swing on homepage. Complex5 P/V/R. Root owns Site/tracking/docs/publishing; main game/homepage ownership pending selection.
 - Collaboration note: keep test evidence outside shipping files; use explicit public-file allowlists for GitHub Pages publishing.
