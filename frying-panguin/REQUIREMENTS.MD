@@ -272,7 +272,7 @@ Lives costs250/500/1000 and Walk Speed150/400/1250 gold in tier order. Swing rem
 
 ## Homepage game link (SITE-01)
 
-The repository-root index.html contains a keyboard-accessible Frying Panguin link to https://frying-panguin-results.chrisfromtemporary50.chatgpt.site/ with a small penguin SVG and brief pan swing. Text stays readable, focus visible, and reduced motion presents a static equivalent. Existing homepage content remains intact; no game runtime is loaded by the homepage.
+The repository-root index.html contains a keyboard-accessible Frying Panguin link to https://chrisperkins.me/frying-panguin/ with the actual game-rendered penguin and baseline pan swing. Text stays readable, focus visible, and reduced motion presents a static equivalent. Existing homepage content remains intact; no game, save or audio session is started by the homepage.
 
 ## Health HUD icon (HUD-01)
 
@@ -280,4 +280,8 @@ The decorative pan SVG below Hearts/Lives is removed. Health remains clear, and 
 
 ## Live follow-up status — 2026-10-06
 
-Current item: SHR-05 shared-link banner removal, custom-domain path and actual game art/animation on repository-root homepage. CLN-01 test-file cleanup is DONE with1/1 fresh acceptance. Core gameplay and existing hosting inputs are preserved during cleanup. Tests and harnesses will no longer be part of the project; historical validation records retain their original evidence scope.
+Current item: none. SHR-05 is DONE with4/5 fresh acceptance and pendingR04 canceled immediately; CLN-01 is DONE with1/1 fresh acceptance. Canonical game https://chrisperkins.me/frying-panguin/; queueempty. Core gameplay and existing hosting inputs are preserved during cleanup. Tests and harnesses will no longer be part of the project; historical validation records retain their original evidence scope.
+
+## SHR-05 — Shared-link appearance and public URL
+
+Shared links open the visitor's own full-height game without the Shared result / time / External preview banner or its top inset. Preserve cold outcome/time/image previews, exact canonical result tuple precision in new URLs, and no shared-result/progress import. Canonical public game and newly generated links use https://chrisperkins.me/frying-panguin/; source folder remains frying-panguin after the user's rename. Existing dynamic Sites links retain their actual Sites origin and frozen preview codecs/images. GitHub Pages result pages use181 displayed-second directories (death000–179,timeout180), matching old display precision and retaining exact tokens in inert queries. Repository-root index uses PanguinArt.drawPlayer with the same baseline engine swing timing/geometry, no Game/audio/save startup, clear link focus and static reduced-motion equivalent. This supersedes SHR-04's visible external strip and SITE-01's decorative SVG. Only curated public runtime/result files are added; no test files/harnesses return. Live stage is CURRENT-WORK-ITEM.md.

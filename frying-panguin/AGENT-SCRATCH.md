@@ -3678,5 +3678,19 @@ Collaboration note: keep mutable stage/handoff state in one authoritative field.
 
 - [x] Inspect custom domain: existing chrisperkins.me is GitHub Pages; requested game path currently returns404. Existing Sites checkout opened before any source edits.
 - [x] CLN-01 implementation:79 test files and56 scripts removed; main SOURCE/TEST STOP received. Core9 and all hosting inputs unchanged. Fresh1/1 acceptance passed, no blockers; archived immediately; preserve core9 and hosting files. Main receives exact test/package ownership; root owns docs/tracking. Private baseline: /tmp/panguin-test-cleanup/preserved-before.json. One fresh review after STOP.
-- [ ] SHR-05 now current: hide shared-link strip, publish requested custom-domain game path and use actual game penguin/swing on homepage. Complex5 P/V/R. Root owns Site/tracking/docs/publishing; main game/homepage ownership pending selection.
+- [x] SHR-05 completed: hide shared-link strip, publish requested custom-domain game path and use actual game penguin/swing on homepage. Complex5 P/V/R. Root owns Site/tracking/docs/publishing; main game/homepage ownership pending selection.
 - Collaboration note: keep test evidence outside shipping files; use explicit public-file allowlists for GitHub Pages publishing.
+
+- SHR-05 selection closed:5 proposals/5 fresh ballots, C01+C04+C05+C06 selected5/5 each; exact-tokenquery/static181pages, legacybanneroff, actualrendererhomepage and curatedpublish. User moved project to frying-panguin; stagedrename committed63c84c6/pushed. Main ownership pendingACK. URLquestion originalvsrenamed pending; no dependentURL edits yet.
+
+- Main /root/shr5_main ACK exactpaths: repository-root index.html and frying-panguin/{share-result.js,share-config.js,game.js}; allothergamefiles read-only. Root removedlegacySiteaside/inset and keeps nativeorigin. Publiccanonical /fryingpanguin retained fromoriginalexplicitrequest pending optionalanswer; sourcefolder stays renamed. Main privateexport at /tmp/panguin-sharing-origin/main/; rootalone integratesbuild/publish.
+
+- Latest user homepage edits changedhref andbothrenderer scriptpaths to /frying-panguin/. Main detected drift anddidnotrestore; rootconfirmedallthreeintentionalpathchanges. Canonicalfixedprefix now /frying-panguin; original unhyphenatedparameter superseded. Main corrects onlyownedconfig/URL/export expectation andretains priorproof scopedasobsoleteprefix. No duplicate source/public folder. No designrevote for exactpathparameter change.
+
+## 2026-10-06 — SHR-05 explicit homepage follow-up
+
+- [x] The active SHR-05 already covers the repository-root homepage game art and pan swing, so I updated its request/acceptance instead of creating a duplicate queue item. Exact additions: face the playable penguin down, repeat the real pan swing in normal motion, and remove the link border and background fill. Preserve readable text, focus visibility, the static reduced-motion state, and all other homepage/game behavior.
+- [x] This is an explicit detail refinement within the selected homepage-rendering design; no proposal/selection restart. Existing status assigns `index.html` to the main and Site/docs/tracking to root. No source changes made; validation of the current homepage is still pending the active implementation handoff.
+
+- [x] SHR-05 final: mainSTOP, rootintegrated181pages/181images, allaffectedchecks/14live200bytespass; Gitd45e3a9pushed, Sitev12publicsucceeded. FreshR01/R02/R03/R05approve4/5 candidate3503240276f6ee1d48f86aaf26c556ce5d491c91436ea195fcfd2825ae098ef6; runningR04interrupted immediately atfourthapproval. Privateprocess terminalcomplete reconciledwithfinished/current. No nextqueueditem. Source/art/game behaviorpreserved; commitpendingcompletiondocs only.
+- Collaborationimprovement: liveuserpathedits muststop staleexpectations, nottriggerrestore; explicitURLhandoff and privateexport allowlist prevented publishingnestedSite/tests. Sharefrozenaffectedproof acrosscomplementaryreviews andcloseat4/5. NativeSitepublication succeeds independently of agentHTTP403edge limitations; labelthat evidence honestly.

@@ -71,7 +71,7 @@ Enemy preparation rings fill from empty to full as attacks approach release. A f
 
 Polar bears are larger, slower heavy threats, with a brief shake at the outgoing ring’s first expansion. Their physical radius is13 and base pace62; attack damage, timing and fixed shockwave geometry stay the same. Reduced motion uses a quiet ring-rim cue. PBM-01 closed with5/5 independent acceptance on its historical frozen candidate.
 
-The game is also hosted at https://frying-panguin-results.chrisfromtemporary50.chatgpt.site; opening a shared link starts your own game beside a labelled external-result preview, while Discord can read the same server-rendered embed metadata. Original v1 assets, fallen-loss images and build instructions are in `share-preview-site/PACKAGING.md`.
+Play at https://chrisperkins.me/frying-panguin/. Shared links open your own full-height game without a shared-result banner; cold link previews retain survival time, outcome and the matching image. Existing Sites result links remain supported. Original v1 assets, fallen-loss images and build instructions are in `share-preview-site/PACKAGING.md`.
 
 The shop doorway has no decorative outward V; walking through it starts the outing as before.
 
@@ -82,3 +82,5 @@ Decorative Summary cycles pause when the document is hidden and clear when the S
 Wood boxes come in honey brace-planks, blush corner-planks and sage party-ribbon variants. Opened boxes leave flat matching planks; the party ribbon/pancake and marked-box contract stamp retain their existing meaning.
 
 Healing cocoa has been removed. Existing saved cocoa stock clears without refunds or changes to other progress. Non-jelly random powerups now split evenly between socks and frenzy; jelly eligibility, source drop chances and the first-chest socks guarantee are unchanged. Removing the cocoa selector draw changes later seeded reward sequences. Lives receipts and healed-return feedback reuse the existing heart artwork.
+
+The source lives in `frying-panguin/`; the curated public runtime/result assets share that folder, matching the latest homepage URL edits. Static result pages cover the existing displayed-second buckets, with the exact canonical result token retained in the link query and never imported into visitor progress. The homepage calls the same shipped penguin renderer and baseline pan timing, without starting a game or audio.
