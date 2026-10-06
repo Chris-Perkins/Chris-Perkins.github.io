@@ -3721,5 +3721,15 @@ Collaboration note: keep mutable stage/handoff state in one authoritative field.
 ## 2026-10-06 — root AGR-05 living enemy cap70
 
 - [x] AGR-04 accepted/archived before latest request. Root owns engine/cache references/local preview snapshot/docs/tracking. Set living cap70; separate existing26 projectile/cosmetic hazard limit to preserve requested enemy-only scope. Exact capacity tuning, one fresh independent reviewer.
-- [ ] Actual ground/flock capacity and normal-step waves >26 through70, initial actor/RNG/cadence preservation, muted browser70-actor integration; freeze/review/archive. No publishing requested.
+- [x] Actual ground/flock capacity and normal-step waves >26 through70, initial actor/RNG/cadence preservation and muted browser70-actor integration pass. Frozen candidate accepted enemy_cap_review1/1 APPROVE/no blockers; AGR-05 archived. No publishing requested.
 - Collaboration note: an actor cap reused for projectiles has multiple consumers; separate the existing hazard bound when changing only enemy capacity.
+
+## 2026-10-06 — root SNM-03 snowman targeting
+
+- [x] Read current70-cap/linear schedule and targeting code. Root owns product/docs/cache references/local snapshot/tracking; panels read-only. Confirmed warning-slot starvation; inclusive300range and committed-facing behavior remain intended.
+- [x] Five independent diagnosis/proposals closed; array-order starvation reproduced across4/6/7/9ready snowmen and reverse order. Source untouched; private neutral catalog /tmp/panguin-snowman-targeting/catalog.md.
+- [x] All5fresh private selector reports collected before tally; C01shared FIFO selected5/5, physical array and committed attacks preserved. Root sole implementer.
+- [x] C01implementation passes4/6/9-owner forward/reverse30/60/120Hz service, mixed-family, locked-aim/range/owned-ball, FIFO newcomer/reentry,70actor, cover/kill/dead-owner, interruption/reset and projected cooldown checks. Ephemeral Map lives on Game and clears at settlement/shop; physical actors/order/RNG and core constants preserved.
+- [x] Muted native portrait/landscape ordinary openings and separate six-owner runtime fixture pass, served engine hash exact/no errors. All191candidate and nine snapshot files verified; five fresh complementary reviewers dispatched.
+- [x] Fresh R01–R04APPROVE4/5/no blockers on 734725aee5cb727142cc74bcad2b1d3ec64c9675c25e0b239074877047795102; running R05interrupted immediately at threshold without approval. Final191-file guard passed; SNM-03archived and current/requirements/private process reconciled. No publication; queue empty.
+- Collaboration note: distinguish rendered target-facing from real admission and active-owner lifetimes; inspect array-order starvation after raising living cap rather than presuming larger range is the fix. Keep eligibility projection separate from physical execution, and forward all updateBurrower arguments including the fourth candidate list in passive wrappers. Distinguish admissions from later dynamic occupancy.

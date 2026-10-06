@@ -374,6 +374,7 @@
 
     prepareShop(reason) {
       this.phase = 'shop'; this.shopGeneration++; this.shopTarget = null;
+      this.attackTickets = new Map(); this.attackTicketSerial = 0;
       this.remaining = RUN_SECONDS;
       this.scaleRemaining = ENCOUNTER_RAMP_SECONDS; this.encounterPressure = 0; this.difficulty = 0;
       this.runGold = 0;
@@ -416,6 +417,7 @@
 
     settleOuting(reason) {
       if (this.settledOuting) return this.settledOuting;
+      this.attackTickets.clear();
       // Latch before any storage callback. Arrivals, KOs and time belong to this
       // outing; later canonical reconciliation must never rewrite this record.
       this.settledOuting = this.summary = Object.freeze({ reason, enemiesConquered: this.kills, goldGained: this.runGold, timeSurvived: clamp(RUN_SECONDS - this.remaining, 0, RUN_SECONDS) });
@@ -751,7 +753,35 @@
       return owners.size;
     }
 
-    updateBurrower(e, dt, cosmetic = false) {
+    readyToAttack(e, dt = 0) {
+      if (this.phase !== 'run' || e.hp <= 0 || e.windup > 0 || e.charge > 0 || e.stun > dt || e.recovery > dt) return false;
+      const gap = distance(e, this.player);
+      if (e.kind === 'burrower') return gap <= e.attackRange && !this.hostileSnowballs.some(ball => ball.ownerId === e.id && ball.life > 0);
+      return e.bowled <= 0 && e.cooldown <= dt && gap < e.attackRange && this.lineUnblocked(e, this.player);
+    }
+
+    prepareAttackCandidates(dt) {
+      // Project timers once for every contender, independently of physical order.
+      // Existing windups/charges still finish through their usual ordered paths.
+      const ready = this.enemies.filter(e => this.readyToAttack(e, dt));
+      const waiting = new Set(ready);
+      for (const e of this.attackTickets.keys()) if (!waiting.has(e)) this.attackTickets.delete(e);
+      for (const e of ready) if (!this.attackTickets.has(e)) this.attackTickets.set(e, ++this.attackTicketSerial);
+      return ready.sort((a, b) => this.attackTickets.get(a) - this.attackTickets.get(b));
+    }
+
+    hasAttackTurn(e, candidates, dt) {
+      if (!this.readyToAttack(e) || this.warningOwnersNear(this.player, e) >= ENCOUNTER_DEFS.nearWarnings) return false;
+      for (const waiter of candidates) {
+        if (!this.attackTickets.has(waiter)) continue;
+        if (!this.readyToAttack(waiter, waiter === e ? 0 : dt)) { this.attackTickets.delete(waiter); continue; }
+        // Tickets give priority, not reserved threat slots. Recheck live owners.
+        if (this.warningOwnersNear(this.player, waiter) < ENCOUNTER_DEFS.nearWarnings) return waiter === e;
+      }
+      return false;
+    }
+
+    updateBurrower(e, dt, cosmetic = false, candidates = null) {
       if (this.phase === 'winning') return;
       e.x = e.anchorX; e.y = e.anchorY;
       e.exposed = true; e.underground = false;
@@ -768,7 +798,7 @@
         }
         return;
       }
-      if (e.recovery > 0 || !cosmetic && (distance(e, this.player) > e.attackRange || this.warningOwnersNear(this.player, e) >= ENCOUNTER_DEFS.nearWarnings || this.hostileSnowballs.some(ball => ball.ownerId === e.id && ball.life > 0))) return;
+      if (e.recovery > 0 || !cosmetic && !this.hasAttackTurn(e, candidates || this.prepareAttackCandidates(dt), dt)) return;
       const angle = cosmetic ? e.age * .7 + e.id : Math.atan2(this.player.y - e.y, this.player.x - e.x);
       e.facingX = Math.cos(angle); e.facingY = Math.sin(angle);
       e.attackX = e.x + e.facingX * BURROWER_DEFS.projectileOriginOffset;
@@ -776,6 +806,7 @@
       e.aimX = e.attackX + e.facingX * BURROWER_DEFS.projectileSpeed * BURROWER_DEFS.projectileLife;
       e.aimY = e.attackY + e.facingY * BURROWER_DEFS.projectileSpeed * BURROWER_DEFS.projectileLife;
       e.windup = BURROWER_DEFS.preparation; e.windupMax = e.windup;
+      if (!cosmetic) this.attackTickets.delete(e);
     }
 
     updateHostileSnowballs(dt) {
@@ -850,6 +881,7 @@
       if (this.phase === 'winning') return;
       const p = this.player;
       const awareness = this.enemyAwarenessRadius();
+      const attackCandidates = this.prepareAttackCandidates(dt);
       for (const e of this.enemies) {
         if (e.hp <= 0) continue;
         e.age += dt;
@@ -861,7 +893,7 @@
         if (e.kind === 'snowbird') e.flockAge = (e.flockAge || 0) + dt;
         e.recovery = Math.max(0, (e.recovery || 0) - dt);
         e.stomp = Math.max(0, (e.stomp || 0) - dt);
-        if (e.kind === 'burrower') { this.updateBurrower(e, dt); continue; }
+        if (e.kind === 'burrower') { this.updateBurrower(e, dt, false, attackCandidates); continue; }
         this.tripPeel(e);
         if (e.stun > 0 || e.bowled > 0) continue;
         const dx = p.x - e.x, dy = p.y - e.y, d = Math.hypot(dx, dy);
@@ -889,12 +921,12 @@
           continue;
         }
         if (e.recovery > 0) continue;
-        const warnings = this.warningOwnersNear(p, e);
-        if (d < e.attackRange && e.cooldown === 0 && warnings < ENCOUNTER_DEFS.nearWarnings && this.lineUnblocked(e, p)) {
+        if (this.hasAttackTurn(e, attackCandidates, dt)) {
           e.facingX = dx / (d || 1); e.facingY = dy / (d || 1);
           e.attackX = e.x; e.attackY = e.y;
           if (e.chargeSpeed && e.attack !== 'stomp') this.prepareCharge(e);
           e.windup = e.kind === 'snowbird' ? e.telegraph : e.telegraph * (1 - this.encounterPressure * .15); e.windupMax = e.windup;
+          this.attackTickets.delete(e);
           continue;
         }
         const investigating = e.investigate > 0;
@@ -924,6 +956,8 @@
         this.moveEnemy(e, vector.x * pace * dt, vector.y * pace * dt);
       }
       this.enemies = this.enemies.filter(e => e.hp > 0);
+      const living = new Set(this.enemies);
+      for (const e of this.attackTickets.keys()) if (!living.has(e) || !this.readyToAttack(e)) this.attackTickets.delete(e);
     }
 
     moveEnemy(e, mx, my, cosmetic = false) {

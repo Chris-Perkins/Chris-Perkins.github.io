@@ -1,14 +1,5 @@
 # Current work item
 
-## AGR-05 — Living-enemy cap70
+No active work item. Queue empty.
 
-Stage: implementation/validation. Root sole writer for engine.js, engine cache references in homepage/main/static documents, local preview snapshot, requirements and tracking. Basic exact existing capacity change26→70. Native projectile/cosmetic hazard limits retain26 through separate hazardCap, so only requested enemy capacity changes. Latest user instruction chooses behavior; no proposal/selection; one fresh independent acceptance reviewer.
-
-Acceptance checklist:
-- Living enemy capacity70 across ground and complete-flock admission; dead actors do not consume slots and oversize requests cannot exceed70.
-- Existing linear30-second milestones, wave counts/mix and nearby warning-owner limit remain.
-- Preserve projectile/cosmetic hazard bounds26, unrelated combat/rewards/saves/clipboard and initial actors/RNG.
-- Verify actual real-step waves admit beyond26 and stop at70; validate representative70-actor browser frame and normal gameplay integration.
-- Refresh local snapshot, freeze affected candidate, obtain1/1 fresh independent acceptance and archive. No publication requested.
-
-Evidence: /tmp/panguin-enemy-cap/. Queue empty.
+SNM-03 DONE: five proposals/five fresh selectors, C01selected5/5; fresh R01–R04approve4/5, no blockers, pending R05interrupted at threshold without approval. Candidate 734725aee5cb727142cc74bcad2b1d3ec64c9675c25e0b239074877047795102. Records and scoped validation: FINISHED-WORK-ITEMS.md and SNOWMAN-TARGETING-REVIEW.md. No publication requested or performed.

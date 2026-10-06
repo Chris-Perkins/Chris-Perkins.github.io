@@ -305,3 +305,13 @@ AGR-04 is accepted1/1 on its frozen candidate, with cadence/arrival and ordinary
 ## AGR-05 — Living enemy cap70
 
 Latest user instruction raises the maximum living enemy count from26 to70. This overrides earlier enemy-cap references; ground and complete-flock capacity share70, and dead entries do not reserve slots. Preserve AGR-04's30/60/90/120/150-second equal-frequency increases and50%-higher late peak, existing wave-count/mix and nearby3warning-owner budget. Retain the existing26 projectile/cosmetic-hazard bounds independently of enemy capacity. Preserve unrelated combat/rewards/persistence/clipboard behavior. Current stage is authoritative in work-items/CURRENT-WORK-ITEM.md.
+
+AGR-05 accepted1/1 on its frozen candidate; evidence and limits are in work-items/FINISHED-WORK-ITEMS.md. Latest living-enemy cap is70.
+
+## SNM-03 — Reliable snowman targeting
+
+Fix proven array-order attack-admission starvation: first ready owners repeatedly claimed the shared warning slots, leaving later eligible snowmen without a turn. C01selected5/5 after5independent proposals and5fresh selectors. Shared per-run FIFO tickets retain continuously eligible waiters, and successful owners rejoin behind them when ready again. Tickets are not warning reservations. Plan using uniformly projected timer eligibility, then recheck live species gates and existing unique-owner counts at commitment. Keep physical enemy array/iteration and attack execution unchanged; no new RNG, save fields or art changes. Clear tickets on actual eligibility loss, removal, successful admission and outing reset/end.
+
+Both snowman and ordinary-species admissions use the same fairness policy. Preserve snowman inclusive300range/no new cover-acquisition gate, locked.75preparation/.3recovery, anchors, own-live-ball exclusion, real swept projectile cover and one-hit rewards. Preserve ordinary cooldown/stun/bowling/strict-range/line-of-sight and committed charge/stomp/swoop behavior, dead-owner live projectiles, nearby3owner admission, current70enemycap/26hazardcap and linear wave milestones. Cosmetic Summary attacks bypass live scheduling. Authoritative current stage and bounded acceptance checklist are in work-items/CURRENT-WORK-ITEM.md.
+
+SNM-03 accepted4/5 on frozen candidate 734725aee5cb727142cc74bcad2b1d3ec64c9675c25e0b239074877047795102, with no blockers; pending fifth cancelled without approval. Scoped evidence is in work-items/FINISHED-WORK-ITEMS.md. No active work item; queue empty. This completion note follows frozen acceptance and does not alter product behavior.
