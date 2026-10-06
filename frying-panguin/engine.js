@@ -13,11 +13,11 @@
   const SWING_SECONDS = (0.32 / 1.5) / 0.67;
   const SWING_COOLDOWN = (0.40 / 1.5) / 0.67;
   // World/logical pixel lengths; halfAngle is radians. Contact radii are unscaled.
-  const PAN_GEOMETRY = Object.freeze({ reach: 37, enemyDot: .1, chestDot: .22, contactSlack: 1, headRadius: 6, frenzyRadius: 8, halfAngle: Math.acos(.1) });
+  const PAN_GEOMETRY = Object.freeze({ reach: 37, enemyDot: .1, chestDot: .22, contactSlack: 3, headRadius: 6, frenzyRadius: 8, halfAngle: Math.acos(.1) });
   function panTargetHit(player, target, kind) {
     const dx = target.x - player.x, dy = target.y - player.y, d = Math.hypot(dx, dy);
     if (kind === 'enemy' && d <= player.radius + target.radius + PAN_GEOMETRY.contactSlack) return true;
-    const reach = (PAN_GEOMETRY.reach + (kind === 'chest' ? 0 : target.radius / 2)) * player.reachScale;
+    const reach = (PAN_GEOMETRY.reach + (kind === 'chest' ? 0 : target.radius * (kind === 'enemy' ? .75 : .5))) * player.reachScale;
     const dot = (dx * player.facingX + dy * player.facingY) / (d || 1);
     return d <= reach && (d === 0 && kind !== 'obstacle' || dot >= (kind === 'chest' ? PAN_GEOMETRY.chestDot : PAN_GEOMETRY.enemyDot));
   }
@@ -37,7 +37,7 @@
   const DEATH_FLOURISH = Object.freeze({ duration: 1.05, flashEnd: .12, extendEnd: .70, fadeStart: .85, frameCap: .05, rays: 12, gap: 14, reach: .65 });
   const VICTORY_FLOURISH = Object.freeze({ duration: 1.5, outwardEnd: .45, frameCap: .05, rays: 10 });
   const POWERUP_FEEDBACK = Object.freeze({ onsetLife: 1, endedLife: .4, finalWindow: 1, maxOnsets: 4, maxExpiries: 4, glyphSize: 36, maxMarks: 12, compositionWidth: 112, compositionHeight: 80 });
-  const BURROWER_DEFS = Object.freeze({ preparation: .75, recovery: .3, projectileSpeed: 360, projectileRadius: 4, projectileLife: .94, projectileOriginOffset: 12, projectileDamage: 1, spacing: 42 });
+  const BURROWER_DEFS = Object.freeze({ preparation: .75, recovery: .3, projectileSpeed: 360, projectileRadius: 4, projectileLife: .94, projectileOriginOffset: 12, projectileDamage: 1, spacing: 42, aimScatter: 6 });
   const SNOWBIRD_DEFS = Object.freeze({ groupMin: 3, groupMax: 5, orbitRadius: 66, diveRadius: 26, orbitAngularSpeed: 1.35, spacing: 22, minSpawnDistance: 160, cycle: 3, diveWindow: 1, stagger: .45 });
   const LEGACY_UPGRADE_DEFS = Object.freeze({ pan: Object.freeze({ max: 3, prices: Object.freeze([200, 520, 900]), outingGates: Object.freeze([0, 2, 4]) }) });
   const UPGRADE_EFFECTS = Object.freeze({ heart: Object.freeze([3, 4, 5, 6]), walk: Object.freeze([1, 1.33, 1.66, 2]), swing: Object.freeze([1, 1.5, 2, 2.5]) });
@@ -781,6 +781,34 @@
       return false;
     }
 
+    snowballAimAngle(e) {
+      const p = this.player, def = BURROWER_DEFS;
+      const vx = Number.isFinite(p.velocityX) ? p.velocityX : 0, vy = Number.isFinite(p.velocityY) ? p.velocityY : 0;
+      const scatterAngle = this.random() * Math.PI * 2, scatterRadius = Math.sqrt(this.random()) * def.aimScatter;
+      const x = p.x - e.x + vx * def.preparation + Math.cos(scatterAngle) * scatterRadius;
+      const y = p.y - e.y + vy * def.preparation + Math.sin(scatterAngle) * scatterRadius;
+      // After preparation, intercept the moving target from the offset muzzle.
+      // Bound prediction by the ball's life; unreachable targets can outrun it.
+      const a = vx * vx + vy * vy - def.projectileSpeed ** 2;
+      const b = 2 * (x * vx + y * vy - def.projectileOriginOffset * def.projectileSpeed);
+      const c = x * x + y * y - def.projectileOriginOffset ** 2;
+      let flight = def.projectileLife;
+      if (c <= 0) flight = 0;
+      else if (Math.abs(a) < 1e-8) {
+        const root = -c / b;
+        if (Number.isFinite(root) && root >= 0) flight = Math.min(flight, root);
+      } else {
+        const discriminant = b * b - 4 * a * c;
+        if (discriminant >= 0) {
+          const roots = [(-b - Math.sqrt(discriminant)) / (2 * a), (-b + Math.sqrt(discriminant)) / (2 * a)];
+          for (const root of roots) if (Number.isFinite(root) && root >= 0) flight = Math.min(flight, root);
+        }
+      }
+      const dx = x + vx * flight, dy = y + vy * flight;
+      if (Math.hypot(dx, dy) > 0) return Math.atan2(dy, dx);
+      return Math.atan2(Number.isFinite(e.facingY) ? e.facingY : 1, Number.isFinite(e.facingX) ? e.facingX : 0);
+    }
+
     updateBurrower(e, dt, cosmetic = false, candidates = null) {
       if (this.phase === 'winning') return;
       e.x = e.anchorX; e.y = e.anchorY;
@@ -799,7 +827,7 @@
         return;
       }
       if (e.recovery > 0 || !cosmetic && !this.hasAttackTurn(e, candidates || this.prepareAttackCandidates(dt), dt)) return;
-      const angle = cosmetic ? e.age * .7 + e.id : Math.atan2(this.player.y - e.y, this.player.x - e.x);
+      const angle = cosmetic ? e.age * .7 + e.id : this.snowballAimAngle(e);
       e.facingX = Math.cos(angle); e.facingY = Math.sin(angle);
       e.attackX = e.x + e.facingX * BURROWER_DEFS.projectileOriginOffset;
       e.attackY = e.y + e.facingY * BURROWER_DEFS.projectileOriginOffset;

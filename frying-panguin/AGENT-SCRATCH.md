@@ -3733,3 +3733,28 @@ Collaboration note: keep mutable stage/handoff state in one authoritative field.
 - [x] Muted native portrait/landscape ordinary openings and separate six-owner runtime fixture pass, served engine hash exact/no errors. All191candidate and nine snapshot files verified; five fresh complementary reviewers dispatched.
 - [x] Fresh R01–R04APPROVE4/5/no blockers on 734725aee5cb727142cc74bcad2b1d3ec64c9675c25e0b239074877047795102; running R05interrupted immediately at threshold without approval. Final191-file guard passed; SNM-03archived and current/requirements/private process reconciled. No publication; queue empty.
 - Collaboration note: distinguish rendered target-facing from real admission and active-owner lifetimes; inspect array-order starvation after raising living cap rather than presuming larger range is the fix. Keep eligibility projection separate from physical execution, and forward all updateBurrower arguments including the fourth candidate list in passive wrappers. Distinguish admissions from later dynamic occupancy.
+
+## 2026-10-06 — root SNM-04 snowball predictive aiming
+
+- [x] Read engine velocity/movement/commit paths and current policy. Root sole writer: engine.js,183document cache refs, local preview snapshot, REQUIREMENTS/tracking/current scratch. Panels read-only. New aiming behavior, bounded complex5proposal/5freshselection/5freshacceptance.
+- [x] All5proposals/all5freshselectors terminal/read; C01selected5/5. Small snowman-only delayed-intercept helper and radius6scatter, sampled once after grant, preserve warning/release/cosmetic branch; cachequerysnm04 on183documents. Intentional live RNG draws documented.
+- [x] Actual-step30movement/100seedspread, real wallblock/slide, straightwalking interception/reversal dodge, lockedray, finitecases, denial/cosmetic RNG,9ownerfairness and setup/definitions pass. Muted native freshopening plus separate ledwarning/reversal fixture pass;191source and9snapshot frozen. Initial diagnostic float/event-drain corrections recorded; no product fixes needed.
+- [x] FreshR01–R04APPROVE4/5/no blockers on 28739fe1466726d24bc79f40aa93a6f4261809a8a39600c8b8e1a7ac5340453e; runningR05interrupted at threshold/no approval. Final191guard passed; archived and all live/private pointers reconciled. SNM-04STOP, immediately next basic PAN-03.
+- Collaboration note: use collision-resolved player velocity, document prediction/scatter units and keep observer wrappers forwarding all arguments.
+
+## 2026-10-06 — root PAN-03 forgiving pan hitbox
+
+- [x] User explicitly requested basic work item; add-work-item skill read/applied. SNM-04accepted/archived before promotion. Root docs/tracking only; one main implementation subagent will own selected engine/cache/local snapshot changes after exact handoff. Panels read-only.
+- [x] P01closed/read; freshV01approvesC01+C03(1/1), rejectsstrongerC02. Selected enemy radiusallowance.75 andcontactSlack3; preserve nominalreach/art/angles/otherobjects. Root engineSTOP, exact product/cache/local snapshot ownership offered to pan_main; root keeps requirements/tracking/current scratch, main may append/update only its named scratch section.
+- [x] Main ownershipACK→SOURCE-TESTSTOP; exact two-line geometry,183cache references and nine-asset refresh/build. Actual-step newband hit/clearmiss/cadence/damage/modifiers/once-target and normal/RM native near-edge proof pass; full212file candidate frozen, root read handoff/source/harnesses and inspected key screenshots. Main scratch preserved.
+- [ ] Fresh1/1acceptance, archive immediately.
+- Collaboration note: avoid moving the rendered reach merely to hide collision misses; measure target edge tolerance and keep chest/obstacle contracts explicit.
+
+## 2026-10-06 — PAN03 pan_main
+
+- [x] Exact ownership ACK and baseline16f51533 verified; selectedC01+C03 only. Own engine,183cache refs and generated local preview snapshot; root retains docs/tracking.
+- [x] Two-line enemy-only tuning: radius allowance.75 and unscaled contactSlack3; nominal reach/art/angles/chest/obstacles unchanged.
+- [x]160species/heading/scale geometry cases,40actual-step oldmiss→newhit/outside/rear cases,9216unchanged chest/obstacle probes,16actual cadence variants plus damage/jelly/golden/once-target/cover/startup preservation pass. Muted native normal/RM ordinary openings plus separate near-edge45.125bear automatic hits pass; actual served hash exact/no errors.
+- [x] Existing refresh/build, node syntax and diff whitespace checks pass. Frozen191product manifest plus11generated paths in /tmp/panguin-pan-forgiving/candidate.json; enginee106523c87118fbf9be6909820d2c96404cc8a4905742312870cf7f267fbd9e2. SOURCE-TESTSTOP; root may sync docs and launch fresh basic reviewer.
+- Fixture notes: corrected temporary contact fixtures to actual player radius6 before passing; nonexistent historical #sound selector replaced with runtime mute assertion plus physical Chromium mute. No product changes from these harness corrections. Ordinary runs are2seconds native departure only; expanded-band proof is arranged, not broad playability evidence.
+- Collaboration note: retain the prior baseline and distinguish arranged edge fixtures from ordinary native departure; no tests or harnesses added to product.

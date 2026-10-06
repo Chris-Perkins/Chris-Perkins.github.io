@@ -315,3 +315,17 @@ Fix proven array-order attack-admission starvation: first ready owners repeatedl
 Both snowman and ordinary-species admissions use the same fairness policy. Preserve snowman inclusive300range/no new cover-acquisition gate, locked.75preparation/.3recovery, anchors, own-live-ball exclusion, real swept projectile cover and one-hit rewards. Preserve ordinary cooldown/stun/bowling/strict-range/line-of-sight and committed charge/stomp/swoop behavior, dead-owner live projectiles, nearby3owner admission, current70enemycap/26hazardcap and linear wave milestones. Cosmetic Summary attacks bypass live scheduling. Authoritative current stage and bounded acceptance checklist are in work-items/CURRENT-WORK-ITEM.md.
 
 SNM-03 accepted4/5 on frozen candidate 734725aee5cb727142cc74bcad2b1d3ec64c9675c25e0b239074877047795102, with no blockers; pending fifth cancelled without approval. Scoped evidence is in work-items/FINISHED-WORK-ITEMS.md. No active work item; queue empty. This completion note follows frozen acceptance and does not alter product behavior.
+
+## SNM-04 — Snowballs lead walking with slight variance
+
+Snowmen predict where a walking player is heading, with slight bounded aiming variation. Use actual current movement, keep aiming fixed once preparation begins so warning and released projectile agree, and preserve current snowman attack timing/physics and targeting fairness. No input, persistence, species, spawn or cosmetic Summary changes. Authoritative live status/checklist: work-items/CURRENT-WORK-ITEM.md.
+
+SNM-04 implementation contract: at admitted live windup sample a uniform-area six-world-unit target disk with two seeded combat RNG draws. Use finite collision-resolved velocity; solve constant-velocity interception including existing .75s preparation,12unit muzzle and360unit/s speed. Choose earliest finite nonnegative flight time capped at.94s,0inside muzzle, capped fallback when unreachable; total horizon≤1.69s. Commit facing once; muzzle and full-life warning/ball ray retain existing meaning. Waiting/release/cosmetic Summary draw no aiming RNG. Initial setup and unrelated mechanics remain; downstream combat RNG intentionally changes after live scatter. This supersedes SNM-03's no-new-RNG constraint only for admitted snowman aiming. Current stage remains authoritative in CURRENT-WORK-ITEM.md.
+
+## PAN-03 — Forgiving frying-pan hitbox
+
+Queued user request: modestly expand existing pan enemy-hit geometry so visible contact and near-edge hits are forgiving. Preserve automatic swing cadence/damage and unrelated mechanics; treat as a basic existing-geometry adjustment with1member committees. SNM-04remains current; authoritative live stage/queue in work-items/CURRENT-WORK-ITEM.md and WORK-ITEMS.md.
+
+SNM-04accepted4/5 on 28739fe1466726d24bc79f40aa93a6f4261809a8a39600c8b8e1a7ac5340453e, no blockers; pending fifth cancelled without approval. SNM-04STOP: product frozen handoff complete. PAN-03now current; authoritative stage/checklist in CURRENT-WORK-ITEM.md, queue empty.
+
+PAN-03selected contract: enemy-only outer target-radius allowance increases.5→.75, whole existing reachScale multiplication retained; unscaled all-heading enemy contactSlack1→3. Keep nominal reach37, angle thresholds/halfAngle, pan rendering, chest radius0/obstacle.5, automatic cadence/damage/once-per-target execution and all snowball leading/FIFO behavior unchanged. C01+C03selected1/1; stronger C02omitted. Current stage remains authoritative in CURRENT-WORK-ITEM.md.
