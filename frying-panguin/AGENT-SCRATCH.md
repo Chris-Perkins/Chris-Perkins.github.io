@@ -3694,3 +3694,13 @@ Collaboration note: keep mutable stage/handoff state in one authoritative field.
 
 - [x] SHR-05 final: mainSTOP, rootintegrated181pages/181images, allaffectedchecks/14live200bytespass; Gitd45e3a9pushed, Sitev12publicsucceeded. FreshR01/R02/R03/R05approve4/5 candidate3503240276f6ee1d48f86aaf26c556ce5d491c91436ea195fcfd2825ae098ef6; runningR04interrupted immediately atfourthapproval. Privateprocess terminalcomplete reconciledwithfinished/current. No nextqueueditem. Source/art/game behaviorpreserved; commitpendingcompletiondocs only.
 - Collaborationimprovement: liveuserpathedits muststop staleexpectations, nottriggerrestore; explicitURLhandoff and privateexport allowlist prevented publishingnestedSite/tests. Sharefrozenaffectedproof acrosscomplementaryreviews andcloseat4/5. NativeSitepublication succeeds independently of agentHTTP403edge limitations; labelthat evidence honestly.
+
+## 2026-10-06 — root SITE-02 plain homepage link
+
+- [x] Move existingcanvas outsideanchor; remove button border/background including inheritedhover fill. One main owns only repository-root index.html afterACK; root owns docs/tracking.
+- [x] Preserve existing animation/script bytes, targetURL/focus/RM, and core9. Bounded browserstyle/layout check; no tests restored. Private baseline /tmp/panguin-home-link-cleanup/.
+- [x] Fresh basic1/1 acceptance, archive immediately and publish targeted homepage update using established GitHub Pages flow.
+- Collaboration: a scoped markup/CSS diff and retained animation evidence avoid duplicate gameplay validation.
+
+- Completed SITE-02 candidate b57d7a52e5c4b44d49e4a6d29a5bc44d5e9826f2691d116e98cf5703f5592fa9; mainSTOP and fresh1/1 independentacceptance/no blockers. Root desktop/narrow normal/hover/focus/RM checks pass; script/core9 unchanged. Archived immediately and livepointers/privateprocess reconciled. Targeted homepage/docs publication follows.
+- Collaboration note: policy path spelling predates user rename; use current frying-panguin filesystem paths. Keeping rendererbytes stable permits one bounded layout review rather than another animation/gameplay matrix.

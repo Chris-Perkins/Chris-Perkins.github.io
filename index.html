@@ -7,17 +7,15 @@
   <style>
     #frying-panguin-home {
       margin: 20px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
     }
 
     #frying-panguin-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
       color: #275b78;
-      background: #eef4f1;
-      border: 1px solid #b4c9ce;
-      border-radius: 4px;
+      background: none;
       font-size: clamp(14px, 2.5vmax, 20px);
       line-height: 1.25;
     }
@@ -27,7 +25,7 @@
       outline-offset: 4px;
     }
 
-    #frying-panguin-link canvas {
+    #frying-panguin-art {
       width: 88px;
       height: 88px;
       flex: none;
@@ -180,8 +178,8 @@
           </div> <!-- closes connect div -->
           <!-- SITE-01 game link -->
           <p id="frying-panguin-home">
+            <canvas id="frying-panguin-art" width="88" height="88" aria-hidden="true"></canvas>
             <a id="frying-panguin-link" href="https://chrisperkins.me/frying-panguin/">
-              <canvas id="frying-panguin-art" width="88" height="88" aria-hidden="true"></canvas>
               <span>Frying Panguin</span>
             </a>
           </p>

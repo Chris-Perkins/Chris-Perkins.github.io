@@ -280,8 +280,12 @@ The decorative pan SVG below Hearts/Lives is removed. Health remains clear, and 
 
 ## Live follow-up status — 2026-10-06
 
-Current item: none. SHR-05 is DONE with4/5 fresh acceptance and pendingR04 canceled immediately; CLN-01 is DONE with1/1 fresh acceptance. Canonical game https://chrisperkins.me/frying-panguin/; queueempty. Core gameplay and existing hosting inputs are preserved during cleanup. Tests and harnesses will no longer be part of the project; historical validation records retain their original evidence scope.
+Current item: none. SITE-02 is DONE with1/1 fresh acceptance; SHR-05 and CLN-01 remain DONE. Canonical game https://chrisperkins.me/frying-panguin/; queueempty. Core gameplay and existing hosting inputs are preserved during cleanup. Tests and harnesses will no longer be part of the project; historical validation records retain their original evidence scope.
 
 ## SHR-05 — Shared-link appearance and public URL
 
 Shared links open the visitor's own full-height game without the Shared result / time / External preview banner or its top inset. Preserve cold outcome/time/image previews, exact canonical result tuple precision in new URLs, and no shared-result/progress import. Canonical public game and newly generated links use https://chrisperkins.me/frying-panguin/; source folder remains frying-panguin after the user's rename. Existing dynamic Sites links retain their actual Sites origin and frozen preview codecs/images. GitHub Pages result pages use181 displayed-second directories (death000–179,timeout180), matching old display precision and retaining exact tokens in inert queries. Repository-root index uses PanguinArt.drawPlayer with the same baseline engine swing timing/geometry, no Game/audio/save startup, clear link focus and static reduced-motion equivalent. This supersedes SHR-04's visible external strip and SITE-01's decorative SVG. Only curated public runtime/result files are added; no test files/harnesses return. Live stage is CURRENT-WORK-ITEM.md.
+
+## SITE-02 — Homepage penguin outside plain text link
+
+The swinging decorative penguin sits beside, outside the Frying Panguin anchor. Remove the link border/background at rest and on hover. Preserve88px crisp actual game artwork and existing swing/lifecycle/reduced-motion behavior, the targetURL/text/focus, and all other homepage content. Live stage remains only in CURRENT-WORK-ITEM.md.
