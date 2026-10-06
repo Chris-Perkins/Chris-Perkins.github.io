@@ -31,7 +31,7 @@
   const SHOP_INTERACTION_RANGE = 30;
   const DROP_RATES = Object.freeze({ chest: .08, party: .35, enemy: .04, rock: .03, jelly: .08 });
   const TOY_DEFS = Object.freeze({ peelEvery: 2, peelLife: 3, peelMax: 3, peelsPerBuff: 4, bananaCooldown: .40 / .67, snowballLife: .45, snowballSpeed: 180, snowballHits: 2, investigate: 1.2, greedyRadius: 80, greedyAwareness: 520, awareness: 340, bondSeconds: 45, bondReward: 100, bounceSpeed: .6, goldenReach: 1.12, goldenSpeed: 1.1 });
-  const ENCOUNTER_DEFS = Object.freeze({ cap: 26, nearWarnings: 3, waveBase: 6.4, waveLate: 3.2, waveEarlyRate: .7, wavePeakRate: 1.5, wavePeakSeconds: 150, waveCountBase: 6, waveCountLate: 9, flockEvery: 2, minSpawnDistance: 160, spawnRadiusMin: 180, spawnRadiusMax: 260, spawnSectorAttempts: 100, spawnAttempts: 150, stompRadius: 42, ringRadius: 100, ringWidth: 8, ringDelay: .22, ringLife: .75, ringDamage: 1, stompRecovery: 1.05, slideRecovery: .55, chargeHitPadding: 5 });
+  const ENCOUNTER_DEFS = Object.freeze({ cap: 70, hazardCap: 26, nearWarnings: 3, waveBase: 6.4, waveLate: 3.2, waveEarlyRate: .7, wavePeakRate: 2.25, wavePeakSeconds: 150, waveStepSeconds: 30, waveCountBase: 6, waveCountLate: 9, flockEvery: 2, minSpawnDistance: 160, spawnRadiusMin: 180, spawnRadiusMax: 260, spawnSectorAttempts: 100, spawnAttempts: 150, stompRadius: 42, ringRadius: 100, ringWidth: 8, ringDelay: .22, ringLife: .75, ringDamage: 1, stompRecovery: 1.05, slideRecovery: .55, chargeHitPadding: 5 });
   const SUMMARY_LOCK = .5;
   // Seconds; rendering and fixtures share the authored death sequence.
   const DEATH_FLOURISH = Object.freeze({ duration: 1.05, flashEnd: .12, extendEnd: .70, fadeStart: .85, frameCap: .05, rays: 12, gap: 14, reach: .65 });
@@ -81,6 +81,14 @@
   const SHORE = Object.freeze([[85, 42], [270, 24], [712, 24], [850, 54], [920, 138], [944, 300], [928, 564], [840, 668], [610, 696], [354, 696], [140, 650], [46, 550], [22, 308], [44, 132]]);
   const POND = Object.freeze({ x: 729, y: 453, rx: 65, ry: 37 });
   const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
+  function waveInterval(elapsed) {
+    const steps = ENCOUNTER_DEFS.wavePeakSeconds / ENCOUNTER_DEFS.waveStepSeconds;
+    const stage = clamp(Math.floor((elapsed + 1e-9) / ENCOUNTER_DEFS.waveStepSeconds), 0, steps);
+    const openingRate = ENCOUNTER_DEFS.waveEarlyRate / ENCOUNTER_DEFS.waveBase;
+    const peakRate = ENCOUNTER_DEFS.wavePeakRate / ENCOUNTER_DEFS.waveLate;
+    // Equal increases in waves per second at each 30-second milestone.
+    return 1 / (openingRate + (peakRate - openingRate) * stage / steps);
+  }
   const distance = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
   function segmentDistance(point, start, end) {
     const dx = end.x - start.x, dy = end.y - start.y;
@@ -372,7 +380,7 @@
       const maxHp = this.maxHealth();
       this.player = { x: SHOP.spawnX, y: SHOP.spawnY, radius: 6, velocityX: 0, velocityY: 0, facingX: 0, facingY: 1, moving: false, walk: 0, swing: 0, swingFacingX: null, swingFacingY: null, swingCadence: 0, cooldown: 0, alive: true, hp: maxHp, maxHp, invulnerable: 0, hurtFlash: 0, buffs: { speed: 0, frenzy: 0, jelly: 0 }, gadget: this.market.equipped, golden: this.market.golden, panFinish: this.market.golden || this.upgrades.swing >= UPGRADE_DEFS.swing.max ? 'gold' : 'steel', reachScale: this.market.golden ? TOY_DEFS.goldenReach : 1, honk: 0, activation: null, activations: [], expiries: [] };
       this.enemies = [];
-      this.waveIn = ENCOUNTER_DEFS.waveBase / ENCOUNTER_DEFS.waveEarlyRate;
+      this.waveIn = waveInterval(0);
       this.kills = 0;
       this.difficulty = 0;
       this.chestsOpened = 0;
@@ -507,7 +515,7 @@
         if (this.saveMarket()) this.startContract();
         else this.market.ticket = true;
       }
-      this.waveIn = ENCOUNTER_DEFS.waveBase / ENCOUNTER_DEFS.waveEarlyRate;
+      this.waveIn = waveInterval(0);
       this.spawnEnemies(4, ['burrower', 'penguin', 'bear', 'chick']);
       this.spawnSnowbirdGroup(SNOWBIRD_DEFS.groupMin);
       this.spawnEnemies(2, ['burrower', 'burrower']);
@@ -752,7 +760,7 @@
         e.windup = Math.max(0, e.windup - dt);
         if (e.windup === 0) {
           const speed = BURROWER_DEFS.projectileSpeed;
-          if (this.hostileSnowballs.length < ENCOUNTER_DEFS.cap && !this.hostileSnowballs.some(ball => ball.ownerId === e.id && ball.life > 0)) {
+          if (this.hostileSnowballs.length < ENCOUNTER_DEFS.hazardCap && !this.hostileSnowballs.some(ball => ball.ownerId === e.id && ball.life > 0)) {
             this.hostileSnowballs.push({ kind: 'hostile-snowball', ownerId: e.id, x: e.attackX, y: e.attackY, vx: e.facingX * speed, vy: e.facingY * speed, radius: BURROWER_DEFS.projectileRadius, life: BURROWER_DEFS.projectileLife, maxLife: BURROWER_DEFS.projectileLife, cosmetic });
             if (!cosmetic) this.events.push({ type: 'throw', kind: e.kind, x: e.x, y: e.y });
           }
@@ -804,7 +812,7 @@
           if (e.windup === 0) {
             if (e.kind === 'bear') {
               e.stomp = .3; e.recovery = .7;
-              if (this.hazards.length < ENCOUNTER_DEFS.cap) this.hazards.push({ kind: 'snow-ring', ownerId: e.id, x: e.x, y: e.y, radius: ENCOUNTER_DEFS.stompRadius, startRadius: ENCOUNTER_DEFS.stompRadius, maxRadius: ENCOUNTER_DEFS.ringRadius, width: ENCOUNTER_DEFS.ringWidth, delay: ENCOUNTER_DEFS.ringDelay, life: ENCOUNTER_DEFS.ringLife, maxLife: ENCOUNTER_DEFS.ringLife, cosmetic: true });
+              if (this.hazards.length < ENCOUNTER_DEFS.hazardCap) this.hazards.push({ kind: 'snow-ring', ownerId: e.id, x: e.x, y: e.y, radius: ENCOUNTER_DEFS.stompRadius, startRadius: ENCOUNTER_DEFS.stompRadius, maxRadius: ENCOUNTER_DEFS.ringRadius, width: ENCOUNTER_DEFS.ringWidth, delay: ENCOUNTER_DEFS.ringDelay, life: ENCOUNTER_DEFS.ringLife, maxLife: ENCOUNTER_DEFS.ringLife, cosmetic: true });
             } else if (e.chargeSpeed) e.charge = e.chargeFor > 0 ? e.chargeFor : e.chargeDuration;
             else { e.spin = .2; e.recovery = .25; }
           }
@@ -1314,7 +1322,10 @@
       this.elapsed += dt;
       if (!this.player.alive) { this.die(); return; }
       if (this.phase === 'run') {
+        const previousWaveInterval = waveInterval(RUN_SECONDS - this.remaining);
         this.remaining = Math.max(0, this.remaining - dt);
+        // Preserve progress toward the next wave when a milestone speeds it up.
+        this.waveIn *= waveInterval(RUN_SECONDS - this.remaining) / previousWaveInterval;
         this.scaleRemaining -= dt;
         if (this.remaining <= 1e-9) {
           this.remaining = 0; this.scaleRemaining = ENCOUNTER_RAMP_SECONDS - RUN_SECONDS;
@@ -1371,8 +1382,7 @@
           const flockRoom = ENCOUNTER_DEFS.cap - before - 3;
           const flock = this.waveNumber % ENCOUNTER_DEFS.flockEvery === 0 && flockRoom >= SNOWBIRD_DEFS.groupMin ? this.spawnSnowbirdGroup(Math.min(flockSize, count - 3, flockRoom), { aroundPlayer: true }) : [];
           this.spawnEnemies(count - flock.length, Array.from({ length: count }, (_, i) => i % 3 === 0 ? 'burrower' : ['chick', 'penguin', 'bear'][(i - Math.floor(i / 3) - 1 + this.waveNumber) % 3]), { aroundPlayer: true });
-          const spawnRate = this.encounterPressure <= 1 ? ENCOUNTER_DEFS.waveEarlyRate + (1 - ENCOUNTER_DEFS.waveEarlyRate) * spawnPressure : 1 + (ENCOUNTER_DEFS.wavePeakRate - 1) * clamp((RUN_SECONDS - this.remaining - ENCOUNTER_RAMP_SECONDS) / (ENCOUNTER_DEFS.wavePeakSeconds - ENCOUNTER_RAMP_SECONDS), 0, 1);
-          this.waveIn = (ENCOUNTER_DEFS.waveBase - spawnPressure * (ENCOUNTER_DEFS.waveBase - ENCOUNTER_DEFS.waveLate)) / spawnRate;
+          this.waveIn = waveInterval(RUN_SECONDS - this.remaining);
           this.events.push({ type: 'wave', kind: flock.length ? 'snowbird' : kind, count, spawned: this.enemies.filter(e => e.hp > 0).length - before, flockCount: flock.length, label: flock.length ? 'SNOWBIRD SNACK RAID!' : kind === 'chick' ? 'DAYCARE ESCAPE!' : kind === 'penguin' ? 'PENGUIN UNION BREAK!' : 'BEAR PAJAMA PARTY!' });
         }
         this.updateHostileSnowballs(motionDt);

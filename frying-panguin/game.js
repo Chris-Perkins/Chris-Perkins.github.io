@@ -377,14 +377,11 @@
     const disabled=!summary||!summaryReady()||sharePending||!shareURL;
     for(const id of ['summary-share','summary-copy'])document.getElementById(id).setAttribute('aria-disabled',String(disabled));
   }
-  function offerShareCopy(text,manual=false){document.getElementById('summary-copy').hidden=false;document.getElementById('summary-link-label').hidden=!manual;shareStatus(text);}
-  function activateShare(copy=false){
+  function offerShareCopy(text,manual=false){document.getElementById('summary-copy').hidden=!manual;document.getElementById('summary-link-label').hidden=!manual;shareStatus(text);}
+  function activateShare(){
     if(game.phase!=='summary'||!summaryReady()||sharePending||!shareURL)return;
     const summary=shareSummary,operation=++shareOperation,url=shareURL;sharePending=true;syncShareResult();
     const finish=()=>{if(shareCurrent(summary,operation)){sharePending=false;syncShareResult();return true;}return false;};
-    let nativeShare=!copy&&typeof navigator.share==='function';
-    if(nativeShare&&typeof navigator.canShare==='function'){try{nativeShare=navigator.canShare({url});}catch{nativeShare=false;}}
-    if(nativeShare){shareStatus('Opening device share…');let promise;try{promise=navigator.share({url});}catch(error){promise=Promise.reject(error);}Promise.resolve(promise).then(()=>{if(finish())shareStatus('Handed to device share.');},error=>{if(finish())offerShareCopy(error?.name==='AbortError'?'Share cancelled or unavailable. Use Copy link.':'Sharing failed. Use Copy link.');});return;}
     shareStatus('Copying link…');let promise;try{if(typeof navigator.clipboard?.writeText!=='function')throw Error('Clipboard unavailable');promise=navigator.clipboard.writeText(url);}catch(error){promise=Promise.reject(error);}Promise.resolve(promise).then(()=>{if(finish())offerShareCopy('Link copied.');},()=>{if(finish()){offerShareCopy('Select the URL and copy it manually.',true);const field=document.getElementById('summary-link');field.focus({preventScroll:true});field.select();}});
   }
 
@@ -820,7 +817,7 @@
       const pointer=sharePointerPermit&&sharePointerPermit.summary===game.summary&&sharePointerPermit.allowed&&(!('pointerId'in event)||event.pointerId===sharePointerPermit.id);
       const assistive=event.detail===0&&!physicalKeys.has('Space')&&!physicalKeys.has('Enter')&&!summaryHeldKeys.has('Space')&&!summaryHeldKeys.has('Enter');
       shareKeyPermit=sharePointerPermit=null;event.preventDefault();event.stopImmediatePropagation();
-      if(summaryReady()&&(key||pointer||assistive))activateShare(button.id==='summary-copy');return;
+      if(summaryReady()&&(key||pointer||assistive))activateShare();return;
     }
     const delayed=blockedPointerClicks.has(event.pointerId)||(!('pointerId' in event)&&event.detail>0&&blockedLegacyClick);
     const heldKey=event.detail===0&&(summaryHeldKeys.has('Space')||summaryHeldKeys.has('Enter'));

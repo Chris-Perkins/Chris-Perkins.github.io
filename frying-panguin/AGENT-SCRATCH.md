@@ -3704,3 +3704,22 @@ Collaboration note: keep mutable stage/handoff state in one authoritative field.
 
 - Completed SITE-02 candidate b57d7a52e5c4b44d49e4a6d29a5bc44d5e9826f2691d116e98cf5703f5592fa9; mainSTOP and fresh1/1 independentacceptance/no blockers. Root desktop/narrow normal/hover/focus/RM checks pass; script/core9 unchanged. Archived immediately and livepointers/privateprocess reconciled. Targeted homepage/docs publication follows.
 - Collaboration note: policy path spelling predates user rename; use current frying-panguin filesystem paths. Keeping rendererbytes stable permits one bounded layout review rather than another animation/gameplay matrix.
+
+## 2026-10-06 — root SHR-06 clipboard-only results
+
+- [x] Read current policy and empty queue. Root owns game.js, main/static document labels/cache version, local preview snapshot and tracking/docs. Exact user request selects existing clipboard route; basic branch removal, one fresh acceptance reviewer.
+- [x] Remove native-share dispatch/statuses, label primary COPY LINK, keep fallback retry visible only on clipboard failure. Preserve current result URL, async operation guard and all input admission.
+- [x] Bounded muted browser validation and local snapshot rebuild pass; independent clipboard_review1/1 APPROVE/no blockers; archived SHR-06. Evidence /tmp/panguin-clipboard-only/. No publication requested in this follow-up.
+- Collaboration note: standalone static result documents duplicate the game shell; update their labels/cache version with the primary document and refresh the local preview manifest using its existing script.
+
+## 2026-10-06 — root AGR-04 late-game spawning
+
+- [x] Inspect empty queue/current engine. Latest user steering replaces smooth ramp with equal wave-frequency steps at30/60/90/120/150seconds; opening preserved, peak1.5→2.25 (+50%). Pending-wave fractional progress preserved. Root owns engine, document cache references, local preview snapshot and tracking/docs. One fresh reviewer for bounded timing-curve adjustment.
+- [x] Actual-step boundary/linear-cadence, cap/flock, same-policy ordinary engine play and muted native browser integration pass. Final candidate frozen; fresh spawn_rate_review1/1 APPROVE/no blockers; AGR-04 archived. Evidence /tmp/panguin-late-spawn/. No publishing requested.
+- Collaboration note: requested cadence and accepted arrivals differ at the living26cap; report both without claiming population grows exactly50%.
+
+## 2026-10-06 — root AGR-05 living enemy cap70
+
+- [x] AGR-04 accepted/archived before latest request. Root owns engine/cache references/local preview snapshot/docs/tracking. Set living cap70; separate existing26 projectile/cosmetic hazard limit to preserve requested enemy-only scope. Exact capacity tuning, one fresh independent reviewer.
+- [ ] Actual ground/flock capacity and normal-step waves >26 through70, initial actor/RNG/cadence preservation, muted browser70-actor integration; freeze/review/archive. No publishing requested.
+- Collaboration note: an actor cap reused for projectiles has multiple consumers; separate the existing hazard bound when changing only enemy capacity.
