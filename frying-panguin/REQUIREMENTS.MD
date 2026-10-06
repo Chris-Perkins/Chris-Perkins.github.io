@@ -345,3 +345,11 @@ PAN-04 accepted4/5/no blockers on frozen212candidate 96c86d3fb134c7dc3758ea0162f
 ## PAN-05 — More forgiving inner pan contact
 
 User asks to make inside of pan hitbox more forgiving. Basic existing enemy close-contact tuning: contactSlack3→8 (five more unscaled units), retain outer enemy55/object+art37, current radius/dot/golden scaling, active run-admitted identity Set/admission damage and all cadence/phase/SNM behavior. Inner all-heading union now player.radius+enemy.radius+8; this supersedes earlier3 allowance only. Direct tuning exception skips proposal/selection; one fresh independent exactcandidate acceptance required. Current authoritative stage/checklist in CURRENT-WORK-ITEM.md.
+
+PAN-05 accepted1/1/no blockers on frozen212candidate 78f7cec118a145a41d9c2a65813f9b71cb62f51ad45156c034dd767da6935648, engine9bf9dc49642474dfec69fa1ef609c72097bbf411199b6e80105fdbf3e2798675. Independent and shared bounded actual-step/native checks pass; final212guard clean. Completion bookkeeping follows frozen approval with no product changes. PAN04/PAN05STOP, no active work item and queue empty; current pointer in CURRENT-WORK-ITEM.md.
+
+## PAN-06 — Tighter outward pan reach
+
+User asks to tighten outward-facing pan hitbox, currently too generous while walking. Basic existing enemy reach tuning55→48 (seven fewer world units, about13%); inner unscaled contactSlack8 remains. Current radius allowance/dot/whole-bound golden scale, authored37art/object gates and active run-admitted identity ownership/admission damage/cadence/SNM paths preserve meaning. This supersedes PAN04/PAN05 outer55 only. Direct tuning exception skips proposal/selection; one fresh independent final acceptance required. Current authoritative stage/checklist: CURRENT-WORK-ITEM.md; queue empty, no publication.
+
+PAN-06 accepted1/1/no blockers on frozen212candidate 05e479ce9674aebdc477e91a61f82a7b8995a788bd76b7697796906f965e0672, engine25282f6e36897ad959057a71aae559e9451261607a11a7aae7482171c93e88cc. Bounded simulation/native and independent affected checks pass; final212guard clean. Completion bookkeeping follows frozen approval without product changes. PAN06STOP; no active work item and queue empty, authoritative current pointer in CURRENT-WORK-ITEM.md.

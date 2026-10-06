@@ -1,0 +1,9 @@
+# PAN-06 review ledger
+
+Basic direct enemy outer reach tuning55→48 underAGENTS exception/no proposal-selection, root solewriter, one fresh final reviewer. Preserve inner8/radius/angle/golden/art+object37 and active identity/admitteddamage/cadence/SNM code. Exact one-line engine delta relative acceptedPAN05 baseline.
+
+10actual-step species/golden newlyexcluded forward band oldhit→newmiss, inside-newboundary hits, inner8 and object eligibility preservation;16cardinal/diagonal base+maxspeed and swingtier0/3 actual initial-outside admission/activeentry/same-serial hits with dedup. Native muted normal/RM ordinary openings plus separate held-right maxwalk+socks fixture: passive observer proves active moving old60.25/new53.25 trimmedband staysundamaged, then original serial hits at52.8 whileinputheld. Everykeypressreleased, soundassertedoff/noerrors/200servedhashes match; screenshot inspected. Evidence /tmp/panguin-pan-outer/check.cjs/report.json/browser.cjs/browser-report.json. Arranged clear terrain/durabletarget/wave delay/immunity distinctfrom ordinary openings; no broad progression/performance claim. Prior timing/SNM/source paths bytepreserved.
+
+Frozen212candidate 05e479ce9674aebdc477e91a61f82a7b8995a788bd76b7697796906f965e0672, engine25282f6e36897ad959057a71aae559e9451261607a11a7aae7482171c93e88cc, snapshota0f0c6979a5152ba8c4d27b0cfb74b3c6de9282f80a1362637897bf11037a8af. Requirements/source held for fresh1/1/no blockers acceptance. No publication.
+
+CLOSED freshouter_r1APPROVE1/1/no blockers on 05e479ce9674aebdc477e91a61f82a7b8995a788bd76b7697796906f965e0672; report fullread/final212diskguard clean. Independently verified affected moving band/outer boundary/inner preservation/source/cache/snapshot, matching shared native evidence. Archived immediately; no product edits after acceptance, requirements completion bookkeeping only. Queueempty/no publication.

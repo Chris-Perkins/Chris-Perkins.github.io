@@ -13,7 +13,7 @@
   const SWING_SECONDS = (0.32 / 1.5) / 0.67;
   const SWING_COOLDOWN = (0.40 / 1.5) / 0.67;
   // World/logical pixel lengths; halfAngle is radians. Contact radii are unscaled.
-  const PAN_GEOMETRY = Object.freeze({ reach: 37, enemyReach: 55, enemyDot: .1, chestDot: .22, contactSlack: 8, headRadius: 6, frenzyRadius: 8, halfAngle: Math.acos(.1) });
+  const PAN_GEOMETRY = Object.freeze({ reach: 37, enemyReach: 48, enemyDot: .1, chestDot: .22, contactSlack: 8, headRadius: 6, frenzyRadius: 8, halfAngle: Math.acos(.1) });
   function panTargetHit(player, target, kind) {
     const dx = target.x - player.x, dy = target.y - player.y, d = Math.hypot(dx, dy);
     if (kind === 'enemy' && d <= player.radius + target.radius + PAN_GEOMETRY.contactSlack) return true;
