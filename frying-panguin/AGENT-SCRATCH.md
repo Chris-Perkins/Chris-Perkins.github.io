@@ -3763,6 +3763,15 @@ Collaboration note: keep mutable stage/handoff state in one authoritative field.
 
 - [x] Read current PAN-03and engine strike/velocity/timing. Root owns source/art/cache/local snapshot/docs/tracking; panels read-only. Preserved baseline /tmp/panguin-pan-approach/baseline.cjs.
 - [x] Actual initial-swing admission fixture: base eligible at.10hit.4167; maxwalk+socks eligible.1333 but passed without hit. Source only checks admission instant. Complex5proposal/5freshselection/5freshacceptance required for bounded active-contact fix; All5proposals/all5freshselectors closed/read; C01selected5/5. Root sole writer.
-- [ ] Implement longer responsive enemy contact with damage/cadence/once-hit/art/modifier/phase preservation; bounded actual-step and muted native proof.
+- [x] C01enemyReach55, owned identity Set and admission damage; active pre/post scans/live-aligned37art.64actual-step approaches (20/30/60/120Hz,8headings,base/maxwalk+socks),80geometry,336object,16cadence variants and dedup/reentry/equalID/turn/enemy-entry/expiry/frenzy/lifecycle/SNM preservation pass. Native normal/RM ordinary openings and distinct fast approach hit in initial serial while key held pass; served200hashes match. Browser observer initially assumed all asset queries pan04; corrected observer to existing coherent asset queries, no product changes.
+- [x]183engine cache refs, nine-asset local refresh/build and syntax pass. Screenshot inspection confirms current art/HUD bounds/direction. Frozen212candidate fresh acceptance pending; no publication.
 - [ ] Frozen candidate fresh scope-sized acceptance, archive immediately.
 - Collaboration note: a radial tolerance probe does not validate enemies entering range between strike admissions; trace movement and admission time separately.
+
+## 2026-10-06 — root PAN-05 inner contact steering
+
+- [x] PAN04accepted4/5/STOP on96c86d3f…1743, reports fullread/final212guard clean. R05interrupt returned already-completed; lateAPPROVE excluded/no false cancellation. Archived and all pointers/private process reconciled.
+- [x] Compatible user steering during frozen PAN-04acceptance recorded in queue; explicit existing inner-tolerance adjustment, basic direct tuning/no proposal-selection, fresh1/1 final review. Root sole writer afterPAN04STOP; no frozen source/requirements edits made before acceptance; promoted after closure.
+- [x] AfterPAN04STOP promoted: exact one-linecontactSlack3→8,183cache refs and nine-asset refresh/build.20actual-step species/side+rear/golden new-band hits and clear exterior misses, repeated-frame dedup, outer55 and representative object gates pass. Prior accepted active/cadence/SNM paths bytepreserved. Muted native normal/RM ordinary openings plus separate held-right innerrear19.536 target hit (old16/new21) pass, served200hashes exact/no errors; screenshots inspected.212candidate frozen for fresh1/1.
+- [ ] Freeze/fresh1/1 acceptance and archive.
+- Collaboration note: queued compatible tuning should not silently mutate a candidate under reviewers; preserve historical acceptance then validate the exact follow-up candidate.
